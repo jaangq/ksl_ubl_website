@@ -16,7 +16,7 @@ class CreateWebsiteTextTable extends Migration
         Schema::create('website_text', function (Blueprint $table) {
             $table->increments('id');
             $table->longText('content');
-            $table->longText('content_en');
+            $table->longText('content_en')->nullable();
             $table->timestamps();
             $table->unsignedInteger('id_pages');
 

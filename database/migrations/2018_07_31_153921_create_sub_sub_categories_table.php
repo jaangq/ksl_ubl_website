@@ -17,8 +17,8 @@ class CreateSubSubCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('desc');
-            $table->string('name_en');
-            $table->text('desc_en');
+            $table->string('name_en')->nullable();
+            $table->text('desc_en')->nullable();
             $table->timestamps();
             $table->unsignedInteger('id_sub_categories');
 
