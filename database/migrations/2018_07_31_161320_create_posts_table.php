@@ -22,13 +22,11 @@ class CreatePostsTable extends Migration
             $table->integer('likes');
             $table->integer('views');
             $table->timestamps();
-            $table->unsignedInteger('id_tags');
             $table->unsignedInteger('id_categories');
             $table->unsignedInteger('id_pages');
             $table->unsignedInteger('id_post_status');
             $table->unsignedInteger('id_users');
 
-            $table->foreign('id_tags')->references('id')->on('tags');
             $table->foreign('id_categories')->references('id')->on('categories');
             $table->foreign('id_pages')->references('id')->on('pages');
             $table->foreign('id_post_status')->references('id')->on('post_status');

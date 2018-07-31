@@ -15,32 +15,34 @@ class DatabaseSeeder extends Seeder
 
         // seeding user_roles table
         DB::table('user_roles')->insert([
-          'id' => 1,
+          'id' => '1',
           'name' => 'admin',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s')
+          'updated_at' => date('Y-m-d H:i:s'),
         ]);
         DB::table('user_roles')->insert([
-           'id' => 2,
+           'id' => '2',
            'name' => 'user',
            'created_at' => date('Y-m-d H:i:s'),
-           'updated_at' => date('Y-m-d H:i:s')
+           'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
         // seeding users table
         DB::table('users')->insert([
           'name' => 'Ling Ling',
           'email' => 'lingling@gmail.com',
-          'password' => bcrypt('secret'),
+          'password' => bcrypt('lingling'),
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s')
+          'updated_at' => date('Y-m-d H:i:s'),
+          'id_user_roles' => '1'
         ]);
         DB::table('users')->insert([
-          'name' => 'Ling Ling',
-          'email' => 'lingling@gmail.com',
-          'password' => bcrypt('secret'),
+          'name' => 'Kagura',
+          'email' => 'kagura@gmail.com',
+          'password' => bcrypt('kagura'),
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s')
+          'updated_at' => date('Y-m-d H:i:s'),
+          'id_user_roles' => '2'
         ]);
 
         // seeding tags table
@@ -63,7 +65,7 @@ class DatabaseSeeder extends Seeder
 
         // seeding categories table
         DB::table('categories')->insert([
-          'id', => '1',
+          'id' => '1',
           'name' => 'Linux',
           'desc' => 'Linux adalah keluarga dari sistem operasi perangkat lunak bebas dan sumber terbuka yang dibangun di sekitar kernel Linux.',
           'name_en' => 'Linux',
@@ -72,7 +74,7 @@ class DatabaseSeeder extends Seeder
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('categories')->insert([
-          'id', => '2',
+          'id' => '2',
           'name' => 'Pemrograman',
           'desc' => 'Pemrograman adalah proses membuat serangkaian instruksi yang memberi tahu komputer cara melakukan suatu tugas.',
           'name_en' => 'Programming',
@@ -81,7 +83,7 @@ class DatabaseSeeder extends Seeder
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('categories')->insert([
-          'id', => '3',
+          'id' => '3',
           'name' => 'Jaringan Komputer (Networking)',
           'desc' => 'Networking, juga dikenal sebagai jaringan komputer, adalah praktik pengangkutan dan pertukaran data antara node melalui media bersama dalam suatu sistem informasi.',
           'name_en' => 'Networking',
@@ -90,7 +92,7 @@ class DatabaseSeeder extends Seeder
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('categories')->insert([
-          'id', => '4',
+          'id' => '4',
           'name' => 'Desain',
           'desc' => 'Desain adalah pembuatan rencana atau konvensi untuk pembangunan objek, sistem atau interaksi manusia yang dapat diukur (seperti dalam cetak biru arsitektur, gambar teknik, proses bisnis, diagram sirkuit, dan pola jahit). Desain memiliki konotasi yang berbeda di berbagai bidang (lihat disiplin desain di bawah). Dalam beberapa kasus, konstruksi langsung suatu objek (seperti dalam gerabah, teknik, manajemen, pengkodean, dan desain grafis) juga dianggap menggunakan pemikiran desain.',
           'name_en' => 'Design',
@@ -101,7 +103,7 @@ class DatabaseSeeder extends Seeder
 
         // seeding sub_categories table
         DB::table('sub_categories')->insert([
-          'id', => '1',
+          'id' => '1',
           'name' => 'Debian',
           'desc' => 'Debian adalah distribusi yang menekankan perangkat lunak bebas. Ini mendukung banyak platform perangkat keras. Debian dan distribusi berdasarkan itu menggunakan format paket .deb dan manajer paket dpkg dan frontendnya (seperti apt-get atau synaptic)',
           'name_en' => 'Debian',
@@ -111,7 +113,7 @@ class DatabaseSeeder extends Seeder
           'id_categories' => '1'
         ]);
         DB::table('sub_categories')->insert([
-          'id', => '2',
+          'id' => '2',
           'name' => 'Arch Linux',
           'desc' => 'Arch Linux adalah distribusi GNU / Linux yang dikembangkan secara independen, x86-64 yang bertujuan untuk menyediakan versi stabil terbaru dari sebagian besar perangkat lunak dengan mengikuti model peluncuran-bergulir. Instalasi default adalah sistem basis minimal, dikonfigurasi oleh pengguna untuk hanya menambahkan apa yang diminta dengan sengaja.',
           'name_en' => 'Arch Linux',
@@ -121,7 +123,7 @@ class DatabaseSeeder extends Seeder
           'id_categories' => '1'
         ]);
         DB::table('sub_categories')->insert([
-          'id', => '3',
+          'id' => '3',
           'name' => 'Fedora',
           'desc' => 'Fedora adalah distribusi Linux yang dikembangkan oleh Proyek Fedora yang didukung masyarakat dan disponsori oleh Red Hat. Fedora berisi perangkat lunak yang didistribusikan di bawah berbagai lisensi sumber terbuka dan gratis dan bertujuan untuk menjadi terdepan dari teknologi tersebut. Fedora adalah sumber hulu dari distribusi Red Hat Enterprise Linux komersial.',
           'name_en' => 'Fedora',
@@ -131,7 +133,7 @@ class DatabaseSeeder extends Seeder
           'id_categories' => '1'
         ]);
         DB::table('sub_categories')->insert([
-          'id', => '4',
+          'id' => '4',
           'name' => 'Laravel',
           'desc' => 'Laravel adalah framework web PHP gratis, open-source, yang dibuat oleh Taylor Otwell dan ditujukan untuk pengembangan aplikasi web mengikuti pola arsitektur model-view – controller dan berdasarkan Symfony.',
           'name_en' => 'Laravel',
@@ -141,7 +143,7 @@ class DatabaseSeeder extends Seeder
           'id_categories' => '2'
         ]);
         DB::table('sub_categories')->insert([
-          'id', => '5',
+          'id' => '5',
           'name' => 'Node.js',
           'desc' => 'Node.js adalah lingkungan run-time JavaScript open-source, lintas platform yang mengeksekusi kode JavaScript di luar browser.',
           'name_en' => 'Node.js',
@@ -153,7 +155,7 @@ class DatabaseSeeder extends Seeder
 
         // seeding sub_sub_categories table
         DB::table('sub_sub_categories')->insert([
-          'id', => '1',
+          'id' => '1',
           'name' => 'Controller',
           'desc' => 'Controller biasanya disimpan di direktori aplikasi / pengontrol, dan direktori ini terdaftar dalam opsi classmap dari file composer.json Anda secara default.',
           'name_en' => 'Controller',
@@ -163,7 +165,7 @@ class DatabaseSeeder extends Seeder
           'id_sub_categories' => '4'
         ]);
         DB::table('sub_sub_categories')->insert([
-          'id', => '2',
+          'id' => '2',
           'name' => 'Views',
           'desc' => 'Views berisi HTML yang disajikan oleh aplikasi Anda dan memisahkan logika controller / aplikasi dari logika presentasi Anda. Tampilan disimpan di direktori sumber daya / tampilan.',
           'name_en' => 'Views',
@@ -173,7 +175,7 @@ class DatabaseSeeder extends Seeder
           'id_sub_categories' => '4'
         ]);
         DB::table('sub_sub_categories')->insert([
-          'id', => '2',
+          'id' => '3',
           'name' => 'Template Blade',
           'desc' => 'Blade adalah mesin templating yang sederhana namun bertenaga dengan Laravel. Tidak seperti mesin template PHP populer lainnya, Blade tidak membatasi Anda untuk menggunakan kode PHP biasa dalam tampilan Anda. Bahkan, semua pandangan Blade dikompilasi ke dalam kode PHP biasa dan di-cache sampai diubah, yang berarti Blade menambahkan nol pada aplikasi Anda. File tampilan blade menggunakan ekstensi file .blade.php dan biasanya disimpan di direktori sumber daya / tampilan.',
           'name_en' => 'Blade Templates',
@@ -185,76 +187,76 @@ class DatabaseSeeder extends Seeder
 
         // seeding pages table
         DB::table('pages')->insert([
-          'id', => '1',
+          'id' => '1',
           'name' => 'Home',
           'name_en' => 'Home',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('pages')->insert([
-          'id', => '2',
+          'id' => '2',
           'name' => 'Berita',
           'name_en' => 'News',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('pages')->insert([
-          'id', => '3',
+          'id' => '3',
           'name' => 'Pelajaran',
           'name_en' => 'Leason',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('pages')->insert([
-          'id', => '4',
+          'id' => '4',
           'name' => 'Tentang',
           'name_en' => 'About',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('pages')->insert([
-          'id', => '5',
+          'id' => '5',
           'name' => 'Kontak',
           'name_en' => 'Contact',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
         ]);
 
         // seeding post_status table
         DB::table('post_status')->insert([
-          'id', => '1',
+          'id' => '1',
           'name' => 'Published',
-          'name_en' => 'Diterbitkan'
+          'name_en' => 'Diterbitkan',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('post_status')->insert([
-          'id', => '2',
+          'id' => '2',
           'name' => 'Draft',
           'name_en' => 'Draf',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('post_status')->insert([
-          'id', => '3',
+          'id' => '3',
           'name' => 'Pending',
           'name_en' => 'Pending',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('post_status')->insert([
-          'id', => '4',
+          'id' => '4',
           'name' => 'Auto Draft',
           'name_en' => 'Draf Otomatis',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('post_status')->insert([
-          'id', => '1',
+          'id' => '5',
           'name' => 'Trash',
           'name_en' => 'Dihapus',
           'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
         ]);
     }
 }
