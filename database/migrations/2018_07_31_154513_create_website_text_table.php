@@ -15,6 +15,8 @@ class CreateWebsiteTextTable extends Migration
     {
         Schema::create('website_text', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('label');
+            $table->string('label_en')->nullable();
             $table->longText('content');
             $table->longText('content_en')->nullable();
             $table->timestamps();

@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
         // seeding users table
         DB::table('users')->insert([
           'name' => 'Ling Ling',
+          'username' => 'lingling',
           'email' => 'lingling@gmail.com',
           'password' => bcrypt('lingling'),
           'created_at' => date('Y-m-d H:i:s'),
@@ -38,6 +39,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('users')->insert([
           'name' => 'Kagura',
+          'username' => 'kagura',
           'email' => 'kagura@gmail.com',
           'password' => bcrypt('kagura'),
           'created_at' => date('Y-m-d H:i:s'),
@@ -257,6 +259,28 @@ class DatabaseSeeder extends Seeder
           'name_en' => 'Dihapus',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        // seeding file_types table
+        DB::table('file_types')->insert([
+          'id' => '1',
+          'name' => 'gambar',
+          'name_en' => 'image',
+          'file_formats' => 'jpg'
+        ]);
+
+        DB::table('file_types')->insert([
+          'id' => '2',
+          'name' => 'gambar',
+          'name_en' => 'image',
+          'file_formats' => 'png'
+        ]);
+
+        DB::table('file_types')->insert([
+          'id' => '3',
+          'name' => 'video',
+          'name_en' => 'video',
+          'file_formats' => 'mp4'
         ]);
     }
 }
