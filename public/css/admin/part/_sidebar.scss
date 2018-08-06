@@ -1,0 +1,40 @@
+$sidebar_bg : #384a58;
+$sidebar_col : #ffffff;
+$a_col : #ffffff;
+$border_col: #ffffff;
+
+section.sidebar {
+  background-color: $sidebar_bg;
+  color: $sidebar_col;
+  ul {
+    list-style: none;
+    margin-bottom: 0;
+    li:first-child {
+      border-top: 1px solid $border_col;
+    }
+    li {
+      border-bottom: 1px solid $border_col;
+      ul {
+        padding: 0;
+        display: none;
+        li:first-child {
+          border-top: 1px solid $border_col;
+        }
+        li {
+          border-bottom: 1px solid $border_col;
+          padding-left: 35px;
+        }
+      }
+    }
+  }
+  a {
+    color: $a_col;
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+  a:hover span {
+    text-decoration: underline;
+  }
+}
