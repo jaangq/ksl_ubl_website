@@ -20,6 +20,25 @@ Route::get('hello', function() {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Admin Routes
 // Auth::routes();
 Route::get('ksl/admin/login', 'Admin\LoginController@showLoginForm')->name('login');
@@ -40,3 +59,7 @@ Route::post('ksl/admin/password/reset', 'Admin\ResetPasswordController@reset');
 Route::get('ksl/admin/dashboard', function(){
   return view('admin/dashboard');
 });
+// Admin Usershome
+Route::resource('ksl/admin/users', 'Admin\UsersController')->only([
+  'index', 'store', 'destroy', 'update'
+]);

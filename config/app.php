@@ -159,7 +159,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        // added manual
+        Yajra\DataTables\DataTablesServiceProvider::class,
+        // create manual
+        App\Providers\KSLServiceProvider::class,
     ],
 
     /*
@@ -209,6 +212,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // added manual
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        // created manual
+        'KSLAlert' => App\Helpers\KSL\Alerts::class,
     ],
 
 ];

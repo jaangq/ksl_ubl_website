@@ -1,0 +1,13 @@
+.users-table {
+  overflow-x: scroll;
+}
+.users-table button {
+  width: 100px;
+  margin: 5px;
+}
+
+.formModal label {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=ksl.style_users.css.map */
