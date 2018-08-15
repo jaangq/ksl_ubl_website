@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\AdminModel\Users;
 use App\AdminModel\User_roles;
 use KSLAlert;
+use View;
 
 class UsersController extends Controller
 {
@@ -16,6 +17,7 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
@@ -45,16 +47,17 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         //
+       $jsData = json_decode($request->input('jsData'));
        $user = new Users;
        try{
-           $user->name = $request->input('name');
-           $user->username = $request->input('username');
-           $user->email = $request->input('email');
-           $user->password = hash::make($request->input('password'));
-           $user->id_user_roles = $request->input('role');
+           $user->name = $jsData->name;
+           $user->username = $jsData->username;
+           $user->email = $jsData->email;
+           $user->password = hash::make($jsData->password);
+           $user->id_user_roles = $jsData->role;
            $user->save();
 
-           $text = ucfirst($request->input('roleName')).' '.$user->name.' has been added';
+           $text = ucfirst($jsData->roleName.' '.$user->name.' has been added');
            $type = 'success';
            $strongText = 'Successfully !';
            return KSLAlert::makesAlert($text, $type, $strongText);
@@ -103,16 +106,17 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $jsData = json_decode($request->input('jsData'));
         $user = Users::find($id);
         try{
-            $user->name = $request->input('name');
-            $user->username = $request->input('username');
-            $user->email = $request->input('email');
-            $user->password = hash::make($request->input('password'));
-            $user->id_user_roles = $request->input('role');
+            $user->name = $jsData->name;
+            $user->username = $jsData->username;
+            $user->email = $jsData->email;
+            $user->password = $jsData->password ?  hash::make($jsData->password) : $user->password;
+            $user->id_user_roles = $jsData->role;
             $user->save();
 
-            $text = ucfirst($request->input('roleName')).' '.$user->name.' has been updated';
+            $text = ucfirst($jsData->roleName).' '.$user->name.' has been updated';
             $type = 'success';
             $strongText = 'Successfully !';
             return KSLAlert::makesAlert($text, $type, $strongText);
@@ -147,5 +151,31 @@ class UsersController extends Controller
         $type = 'success';
         $strongText = 'Successfully !';
         return KSLAlert::makesAlert($text, $type, $strongText);
+    }
+
+    /**
+     * Display a listing of the resource by searched data.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        //
+        $val = $request->input('val');
+
+        $data['users'] = Users::join('user_roles', 'user_roles.id', '=', 'users.id_user_roles')
+                          ->where('users.id','LIKE','%'.$val.'%')
+                          ->orWhere('user_roles.name','LIKE','%'.$val.'%')
+                          ->orwhere('users.name','LIKE','%'.$val.'%')
+                          ->orWhere('username','LIKE','%'.$val.'%')
+                          ->orWhere('email','LIKE','%'.$val.'%')
+                          ->orWhere('users.created_at','LIKE','%'.$val.'%')
+                          ->orWhere('users.updated_at','LIKE','%'.$val.'%')
+                          ->select('users.*')->orderBy('users.id', 'DESC')
+                          ->paginate(3);
+        $data['roles'] = User_roles::all();
+        $html = View('admin.users')->with('data', $data)->render();
+        die($html);
+
     }
 }

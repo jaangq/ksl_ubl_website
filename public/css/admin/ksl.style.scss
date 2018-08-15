@@ -1,2 +1,6 @@
-@import "part/sidebar";
-@import "part/universal";
+// sidebar and universal
+@import 'part/sidebar';
+@import 'part/universal';
+
+// page
+@import 'part/users';

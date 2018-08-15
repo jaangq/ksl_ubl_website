@@ -48,4 +48,5 @@
       </div>
     </div>
 </div>
+<meta name="page" content="dashboard">
 @endsection

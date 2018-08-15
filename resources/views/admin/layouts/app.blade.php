@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>KSL Admin Pages</title>
 
 
     <!-- Fonts -->
@@ -19,7 +19,6 @@
     <link href="{{ asset('css/fontawesome-all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin/ksl.style.css') }}" rel="stylesheet">
-    @yield('css')
 </head>
 <body>
     <div id="app">
@@ -79,7 +78,7 @@
     <div class="container-fluid row">
       <section class="col-md-2 justify-content-center sidebar p-0">
         <ul class="p-0">
-          <li><a href="#"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+          <li><a href="{{ url('ksl/admin/dashboard') }}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
           <li class="has-sub"><a href="#"><i class="fas fa-file"></i> <span>Pages</span></a>
             <ul>
               <li><a href="#"><span>Home</span></a></li>
@@ -96,20 +95,19 @@
                 <li><a href="#"><span>Networking</span></a></li>
               </ul>
           </li>
-          <li><a href="#"><i class="fas fa-users"></i> <span>Users</span></a></li>
-          <li><a href="#"><i class="fas fa-tags"></i> <span>Tags</span></a></li>
+          <li><a href="{{ url('ksl/admin/users') }}"><i class="fas fa-users"></i> <span>Users</span></a></li>
+          <li><a href="{{ url('ksl/admin/tags') }}"><i class="fas fa-tags"></i> <span>Tags</span></a></li>
         </ul>
       </section>
       <main class="col-md-10 py-4">
           @yield('content')
       </main>
     </div>
-    
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/fontawesome-all.min.js') }}" defer></script>
     <script src="{{ asset('js/admin/universal.js') }}" defer></script>
-    @yield('js')
 
 </body>
 </html>

@@ -34,4 +34,30 @@ section.sidebar a:hover span {
   text-decoration: underline;
 }
 
+#app nav .container {
+  max-width: none;
+}
+
+.search-box-container button.search-box-btn {
+  width: 50px;
+}
+
+.search-box-container input.search-box {
+  position: absolute;
+  width: 200px;
+  right: -50px;
+  padding-right: 60px;
+}
+
+.card-body-table {
+  overflow-x: scroll;
+}
+.card-body-table button {
+  width: 100px;
+  margin: 5px;
+}
+.card-body-table .formModal label {
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=ksl.style.css.map */

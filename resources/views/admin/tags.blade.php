@@ -3,16 +3,16 @@
 @section('content')
 <div class="flash-message"></div>
 <div class="container-narrow">
-       <h2>Users Data</h2>
-       <button type="button" data-toggle="modal" data-target="#formModal" class="btn btn-primary btn-xs add-btn-modal">Add New User</button>
+       <h2>Create Manual Tags</h2>
+       <button type="button" data-toggle="modal" data-target="#formModal" class="btn btn-primary btn-xs add-btn-modal">Add New Tags</button>
 
          <div class="card my-4">
              <div class="card-header"></div>
-             <div class="card-body table-responsive-md users-table card-body-table">
+             <div class="card-body table-responsive-md tags-table card-body-table">
                <!-- Table-to-load-the-data Part -->
                <div class="row">
                  <div class="col-md-8">
-                   {{ $data['users']->links() }}
+                   {{ $data['tags']->links() }}
                  </div>
                  <div class="col-md-4 text-right pr-5">
                    <div class="row search-box-container position-relative">
@@ -34,29 +34,27 @@
                        <tr>
                            <th scope="col">ID</th>
                            <th scope="col">Name</th>
-                           <th scope="col">Username</th>
-                           <th scope="col">Email</th>
-                           <th scope="col">password</th>
+                           <th scope="col">Desc</th>
+                           <th scope="col">Name EN</th>
+                           <th scope="col">Desc EN</th>
                            <th scope="col">Created At</th>
                            <th scope="col">Updated At</th>
-                           <th scope="col">Role</th>
                            <th scope="col">Action</th>
                        </tr>
                    </thead>
-                   <tbody id="users-list" name="users-list">
-                       @foreach ($data['users'] as $user)
-                       <tr id="user{{$user->id}}">
-                           <td>{{$user->id}}</td>
-                           <td class="td-name">{{$user->name}}</td>
-                           <td class="td-username">{{$user->username}}</td>
-                           <td class="td-email">{{$user->email}}</td>
-                           <td>{{str_limit($user->password, 10)}}</td>
-                           <td>{{$user->created_at}}</td>
-                           <td>{{$user->updated_at}}</td>
-                           <td class="td-role" val="{{$user->user_roles->id}}">{{$user->user_roles->name}}</td>
+                   <tbody id="tags-list" name="tags-list">
+                       @foreach ($data['tags'] as $tag)
+                       <tr id="tags{{$tag->id}}">
+                           <td>{{$tag->id}}</td>
+                           <td class="td-name">{{$tag->name}}</td>
+                           <td class="td-desc">{{$tag->desc}}</td>
+                           <td class="td-name_en">{{$tag->name_en}}</td>
+                           <td class="td-desc_en">{{$tag->desc_en}}</td>
+                           <td>{{$tag->created_at}}</td>
+                           <td>{{$tag->updated_at}}</td>
                            <td>
-                               <button class="btn btn-warning btn-xs btn-detail open-modal upd-data-btn" value="{{$user->id}}">Edit</button>
-                               <button class="btn btn-danger btn-xs btn-delete delete-task del-data-btn" value="{{$user->id}}">Delete</button>
+                               <button class="btn btn-warning btn-xs btn-detail open-modal upd-data-btn" value="{{$tag->id}}">Edit</button>
+                               <button class="btn btn-danger btn-xs btn-delete delete-task del-data-btn" value="{{$tag->id}}">Delete</button>
                            </td>
                        </tr>
                        @endforeach
@@ -68,7 +66,7 @@
                  <div class="modal-dialog" role="document">
                    <div class="modal-content">
                      <div class="modal-header">
-                       <h5 class="modal-title" id="formModalLabel">Add New User</h5>
+                       <h5 class="modal-title" id="formModalLabel">Add New Tags</h5>
                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                          <span aria-hidden="true">&times;</span>
                        </button>
@@ -76,34 +74,25 @@
                      <div class="modal-body">
                        <form>
                          <div class="form-group">
-                             <label for="user-name" class="col-form-label">Name:</label>
-                           <input type="text" class="form-control" id="user-name">
+                             <label for="tag-name" class="col-form-label">Name:</label>
+                           <input type="text" class="form-control" id="tag-name">
                          </div>
                          <div class="form-group">
-                           <label for="user-username" class="col-form-label">Username:</label>
-                           <input type="text" class="form-control" id="user-username">
+                           <label for="tag-desc" class="col-form-label">Desc:</label>
+                           <textarea class="form-control" id="tag-desc" rows="4">
+                           </textarea>
                          </div>
                          <div class="form-group">
-                             <label for="user-email" class="col-form-label">Email:</label>
-                           <input type="email" class="form-control" id="user-email">
+                           <label for="tag-name_en" class="col-form-label">Name EN:</label>
+                           <input type="text" class="form-control" id="tag-name_en">
                          </div>
                          <div class="form-group">
-                           <label for="user-password" class="col-form-label">Password:</label>
-                           <input type="password" class="form-control" id="user-password">
+                           <label for="tag-desc_en" class="col-form-label">Desc EN:</label>
+                           <textarea class="form-control" id="tag-desc_en" rows="4">
+                             </textarea>
                          </div>
                          <div class="form-group">
-                           <label for="user-roles" class="col-form-label">Role:</label>
-                           <select class="user-roles" id="user-roles" name="user-roles">
-                             @foreach($data['roles'] as $role)
-                             <option value="{{$role->id}}">{{$role->name}}</option>
-                             @endforeach
-                             <!--
-                             <option value="admin">Admin</option>
-                             <option value="user">User</option> -->
-                           </select>
-                         </div>
-                         <div class="form-group">
-                           <input type="hidden" class="form-control" id="user-id" name="user-id">
+                           <input type="hidden" class="form-control" id="tag-id" name="tag-id">
                          </div>
                        </form>
                      </div>
@@ -118,5 +107,5 @@
              </div>
          </div>
        </div>
-       <meta name="page" content="users">
+       <meta name="page" content="tags">
 @endsection

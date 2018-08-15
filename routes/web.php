@@ -38,28 +38,26 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-
 // Admin Routes
-// Auth::routes();
-Route::get('ksl/admin/login', 'Admin\LoginController@showLoginForm')->name('login');
-Route::post('ksl/admin/login', 'Admin\LoginController@login');
-Route::post('ksl/admin/logout', 'Admin\LoginController@logout')->name('logout');
 
-// Registration Routes...
-Route::get('ksl/admin/register', 'Admin\RegisterController@showRegistrationForm')->name('register');
-Route::post('ksl/admin/register', 'Admin\RegisterController@register');
+// Admin Auth Routes
+App\CustomRoutes\Router::AdminAuth();
 
-// Password Reset Routes...
-Route::get('ksl/admin/password/reset', 'Admin\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('ksl/admin/password/email', 'Admin\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('ksl/admin/password/reset/{token}', 'Admin\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('ksl/admin/password/reset', 'Admin\ResetPasswordController@reset');
-
-// Admin Dashboard
-Route::get('ksl/admin/dashboard', function(){
-  return view('admin/dashboard');
-});
-// Admin Usershome
+// Admin Users
 Route::resource('ksl/admin/users', 'Admin\UsersController')->only([
-  'index', 'store', 'destroy', 'update'
-]);
+  'index', 'store', 'destroy', 'update', 'search'
+])->middleware('auth');
+
+// Admin Tags
+Route::resource('ksl/admin/tags', 'Admin\TagsController')->only([
+  'index', 'store', 'destroy', 'update', 'search'
+])->middleware('auth');
+
+// Default Admin LogIn to Dashboard
+Route::get('ksl/admin/{dashboard?}', function(){
+  return view('admin/dashboard');
+})->middleware('auth');
+
+// Testing Routes
+Route::post('test', function() {
+});

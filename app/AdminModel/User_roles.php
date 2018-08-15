@@ -9,8 +9,4 @@ class User_roles extends Model
     //
     protected $fillable = ['id', 'name', 'created_at', 'update_at'];
 
-    // public function Users()
-    // {
-    //   return $this->hasMany('App\AdminModel\Users');
-    // }
 }
