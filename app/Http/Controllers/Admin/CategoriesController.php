@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\AdminModel\Categories;
 use App\AdminModel\Pages;
-use App\AdminModel\Tags;
 use KSLAlert;
 use View;
 
-class TagsController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +20,8 @@ class TagsController extends Controller
     {
         //
         $data['pages'] = Pages::getAllPages();
-        $data['tags'] = Tags::orderBy('id', 'DESC')->paginate(3);
-        return view('admin.tags')->with('data', $data);
+        $data['categories'] = Categories::orderBy('id', 'DESC')->paginate(4);
+        return view('admin.categories')->with('data', $data);
     }
 
     /**
@@ -44,26 +44,26 @@ class TagsController extends Controller
     {
         //
         $jsData = json_decode($request->input('jsData'));
-        $tag = new Tags;
+        $category = new Categories;
         try{
-            $tag->name = $jsData->name;
-            $tag->desc = $jsData->desc;
-            $tag->name_en = $jsData->name_en;
-            $tag->desc_en = $jsData->desc_en;
-            $tag->save();
+            $category->name = $jsData->name;
+            $category->desc = $jsData->desc;
+            $category->name_en = $jsData->name_en;
+            $category->desc_en = $jsData->desc_en;
+            $category->save();
 
-            $text = ucfirst('Tag '.$jsData->name_en.' has been added');
+            $text = ucfirst('Category '.$jsData->name_en.' has been added');
             $type = 'success';
             $strongText = 'Successfully !';
             return KSLAlert::makesAlert($text, $type, $strongText);
          }
          catch(\Exception $e){
             // do task when error
-            $text = 'Failed to add tag';
+            $text = 'Failed to add category';
             $type = 'danger';
             $strongText = 'Error !';
             if (preg_match('/^.+\[(23000)\]/', $e->getMessage(), $match)) {
-              $text = 'Tags already exists !';
+              $text = 'Category already exists !';
             }
             return KSLAlert::makesAlert($text, $type, $strongText);
          }
@@ -102,26 +102,26 @@ class TagsController extends Controller
     {
         //
         $jsData = json_decode($request->input('jsData'));
-        $tag = Tags::find($id);
+        $category = Categories::find($id);
         try{
-            $tag->name = $jsData->name;
-            $tag->desc = $jsData->desc;
-            $tag->name_en = $jsData->name_en;
-            $tag->desc_en = $jsData->desc_en;
-            $tag->save();
+            $category->name = $jsData->name;
+            $category->desc = $jsData->desc;
+            $category->name_en = $jsData->name_en;
+            $category->desc_en = $jsData->desc_en;
+            $category->save();
 
-            $text = 'Tag '.$tag->name.' has been updated';
+            $text = 'Category '.$category->name.' has been updated';
             $type = 'success';
             $strongText = 'Successfully !';
             return KSLAlert::makesAlert($text, $type, $strongText);
          }
          catch(\Exception $e){
             // do task when error
-            $text = 'Failed to update user';
+            $text = 'Failed to update category';
             $type = 'danger';
             $strongText = 'Error !';
             if (preg_match('/^.+\[(23000)\]/', $e->getMessage(), $match)) {
-              $text = 'Tag already exists !';
+              $text = 'Category already exists !';
             }
             return KSLAlert::makesAlert($text, $type, $strongText);
          }
@@ -136,11 +136,11 @@ class TagsController extends Controller
     public function destroy($id)
     {
         //
-        $tag = Tags::find($id);
-        $name = $tag->name;
-        $tag->delete();
+        $category = Categories::find($id);
+        $name = $category->name;
+        $category->delete();
 
-        $text = 'Tag '.$name.' has been deleted';
+        $text = 'Category '.$name.' has been deleted';
         $type = 'success';
         $strongText = 'Successfully !';
         return KSLAlert::makesAlert($text, $type, $strongText);
@@ -157,7 +157,7 @@ class TagsController extends Controller
         $val = $request->input('val');
 
         $data['pages'] = Pages::getAllPages();
-        $data['tags'] = Tags::where('id','LIKE','%'.$val.'%')
+        $data['categories'] = Categories::where('id','LIKE','%'.$val.'%')
                           ->orWhere('name','LIKE','%'.$val.'%')
                           ->orWhere('desc','LIKE','%'.$val.'%')
                           ->orWhere('name_en','LIKE','%'.$val.'%')
@@ -165,8 +165,8 @@ class TagsController extends Controller
                           ->orWhere('created_at','LIKE','%'.$val.'%')
                           ->orWhere('updated_at','LIKE','%'.$val.'%')
                           ->orderBy('id', 'DESC')
-                          ->paginate(3);
-        $html = View('admin.tags')->with('data', $data)->render();
+                          ->paginate(4);
+        $html = View('admin.categories')->with('data', $data)->render();
         die($html);
 
     }

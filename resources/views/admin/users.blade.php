@@ -1,18 +1,24 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.app', ['pages' => $data['pages']])
 
 @section('content')
 <div class="flash-message"></div>
 <div class="container-narrow">
-       <h2>Users Data</h2>
-       <button type="button" data-toggle="modal" data-target="#formModal" class="btn btn-primary btn-xs add-btn-modal">Add New User</button>
+        <div class="content-head p-4">
+          <p class="h2">
+            <span class="prime-col">Users</span> <span class="second-col">Data</span>
+          </p>
+        </div>
 
-         <div class="card my-4">
-             <div class="card-header"></div>
+         <div class="card m-4">
+             <!-- <div class="card-header text-center"><strong>Users</strong></div> -->
              <div class="card-body table-responsive-md users-table card-body-table">
                <!-- Table-to-load-the-data Part -->
                <div class="row">
-                 <div class="col-md-8">
+                 <div class="col-md-4">
                    {{ $data['users']->links() }}
+                 </div>
+                 <div class="col-md-4 text-center">
+                   <button type="button" data-toggle="modal" data-target="#formModal" class="btn btn-primary btn-xs add-btn-modal">Add New User</button>
                  </div>
                  <div class="col-md-4 text-right pr-5">
                    <div class="row search-box-container position-relative">
@@ -49,8 +55,9 @@
                            <td>{{$user->id}}</td>
                            <td class="td-name">{{$user->name}}</td>
                            <td class="td-username">{{$user->username}}</td>
-                           <td class="td-email">{{$user->email}}</td>
-                           <td>{{str_limit($user->password, 10)}}</td>
+                           <td class="td-email">{!!KSLLessMore::showLessMore($user->email, 15)!!}</td>
+                           <!-- <td>{{str_limit($user->password, 10)}}</td> -->
+                           <td>{!!KSLLessMore::showLessMore($user->password, 15)!!}</td>
                            <td>{{$user->created_at}}</td>
                            <td>{{$user->updated_at}}</td>
                            <td class="td-role" val="{{$user->user_roles->id}}">{{$user->user_roles->name}}</td>

@@ -1,31 +1,126 @@
-// universa;
+// universal
+$prime-col : #764a6e;
+$second-col : #58848d;
+$third-col : #79c0a0;
+ // font-concert-one
+@font-face {
+     font-family: "ConcertOne";
+     src: url("ConcertOne-Regular.ttf") format("truetype");
+  }
+body {
+  font-size: 0.8em;
+}
+// Helper class
+.w-40px {
+  width: 40px !important;
+}
+.fa-window-minimize, .fa-window-maximize {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.7);
+}
+.fa-window-minimize:hover, .fa-window-maximize:hover {
+  color: #000;
+}
+.overflow-x-scroll-none {
+  overflow-x: unset !important;
+}
+.font-concert-one {
+  font-family: "ConcertOne";
+}
+.prime-col {
+  color: $prime-col;
+}
+.second-col {
+  color: $second-col;
+}
+.third-col {
+  color: $third-col;
+}
+.v-bottom {
+  vertical-align: bottom;
+}
+// End Helper class
+label {
+  cursor: pointer;
+}
 #app {
-  nav {
+  nav.navbar-laravel {
+    // background-color: #33102b;
+    background: linear-gradient(to right, #33102b, #2d7c8d);
     .container {
       max-width: none;
+      a.navbar-brand, a.nav-link {
+        color: #fff;
+      }
     }
   }
 }
-
-.search-box-container button.search-box-btn {
-  width: 50px;
+section.col-md-2 {
+  flex: 0 0 13.667%;
+  max-width: 0 0 13.667%;
 }
-.search-box-container input.search-box {
-  position: absolute;
-  width: 200px;
-  right: -50px;
-  padding-right: 60px;
+main.col-md-10 {
+  flex: 0 0 86.333%;
+  max-width: 86.333%;
+  padding: 0;
+  .content-head {
+    font-weight: 700;
+    font-size: 1.2em;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+  }
+}
+.cat-head-lbs, .sub-cat-head-lbs, .sub-sub-cat-head-lbs {
+  .search-box-container {
+    padding: 0;
+    button.search-box-btn {
+      width: 50px;
+      position: absolute;
+      right: -5px;
+    }
+    input.search-box {
+      position: absolute;
+      width: 100%;
+      right: unset;
+      padding-right: 57px;
+    }
+  }
+}
+.search-box-container {
+  button.search-box-btn {
+    width: 50px;
+  }
+  input.search-box {
+    position: absolute;
+    width: 200px;
+    right: -50px;
+    padding-right: 60px;
+  }
 }
 
 .card-body-table {
   overflow-x: scroll;
-  button {
-    width: 100px;
-    margin: 5px;
+  table.table {
+    button {
+      width: 100px;
+      margin: 5px;
+    }
   }
   .formModal {
     label {
       font-weight: bold;
     }
   }
+}
+
+
+.lessmore-btn {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+}
+.lessmore-btn:hover {
+  text-decoration: underline;
+  color: #000;
 }

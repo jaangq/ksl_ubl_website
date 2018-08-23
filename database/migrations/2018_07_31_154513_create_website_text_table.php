@@ -15,10 +15,11 @@ class CreateWebsiteTextTable extends Migration
     {
         Schema::create('website_text', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('label');
-            $table->string('label_en')->nullable();
+            $table->string('label')->unique();
+            $table->string('label_en')->unique();
             $table->longText('content');
             $table->longText('content_en')->nullable();
+            $table->string('prefix')->nullable();
             $table->timestamps();
             $table->unsignedInteger('id_pages');
 

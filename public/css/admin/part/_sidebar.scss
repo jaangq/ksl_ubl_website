@@ -1,17 +1,19 @@
 // sidebar
-$sidebar_bg : #384a58;
+$sidebar_bg : #844476;
 $sidebar_col : #ffffff;
 $a_col : #ffffff;
 $border_col: #ffffff;
 
 section.sidebar {
-  background-color: $sidebar_bg;
+  // background-color: $sidebar_bg;
   color: $sidebar_col;
+  // background: linear-gradient(to right, #844476, #ba5fa6);
+  background: linear-gradient(to right, #92628f, #694060);
   ul {
     list-style: none;
     margin-bottom: 0;
     li:first-child {
-      border-top: 1px solid $border_col;
+      // border-top: 1px solid $border_col;
     }
     li {
       border-bottom: 1px solid $border_col;

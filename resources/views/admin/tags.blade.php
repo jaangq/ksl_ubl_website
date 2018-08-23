@@ -1,18 +1,26 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.app', ['pages' => $data['pages']])
 
 @section('content')
 <div class="flash-message"></div>
 <div class="container-narrow">
-       <h2>Create Manual Tags</h2>
-       <button type="button" data-toggle="modal" data-target="#formModal" class="btn btn-primary btn-xs add-btn-modal">Add New Tags</button>
+       <div class="content-head p-4">
+         <p class="h2">
+           <span class="prime-col">Create</span>
+           <span class="second-col">Manual</span>
+           <span class="third-col">Tags</span>
+         </p>
+       </div>
 
-         <div class="card my-4">
-             <div class="card-header"></div>
+
+         <div class="card m-4">
              <div class="card-body table-responsive-md tags-table card-body-table">
                <!-- Table-to-load-the-data Part -->
                <div class="row">
-                 <div class="col-md-8">
+                 <div class="col-md-4">
                    {{ $data['tags']->links() }}
+                 </div>
+                 <div class="col-md-4 text-center">
+                   <button type="button" data-toggle="modal" data-target="#formModal" class="btn btn-primary btn-xs add-btn-modal">Add New Tags</button>
                  </div>
                  <div class="col-md-4 text-right pr-5">
                    <div class="row search-box-container position-relative">
@@ -47,9 +55,9 @@
                        <tr id="tags{{$tag->id}}">
                            <td>{{$tag->id}}</td>
                            <td class="td-name">{{$tag->name}}</td>
-                           <td class="td-desc">{{$tag->desc}}</td>
+                           <td class="td-desc">{!!KSLLessMore::showLessMore($tag->desc)!!}</td>
                            <td class="td-name_en">{{$tag->name_en}}</td>
-                           <td class="td-desc_en">{{$tag->desc_en}}</td>
+                           <td class="td-desc_en">{!!KSLLessMore::showLessMore($tag->desc_en)!!}</td>
                            <td>{{$tag->created_at}}</td>
                            <td>{{$tag->updated_at}}</td>
                            <td>

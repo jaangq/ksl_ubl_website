@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use App\AdminModel\Pages;
 use App\AdminModel\Users;
 use App\AdminModel\User_roles;
 use KSLAlert;
@@ -21,6 +22,7 @@ class UsersController extends Controller
     public function index()
     {
         //
+        $data['pages'] = Pages::getAllPages();
         $data['users'] = Users::orderBy('id', 'DESC')->paginate(3);
         $data['roles'] = User_roles::all();
         return view('admin.users')->with('data', $data);
@@ -173,6 +175,7 @@ class UsersController extends Controller
                           ->orWhere('users.updated_at','LIKE','%'.$val.'%')
                           ->select('users.*')->orderBy('users.id', 'DESC')
                           ->paginate(3);
+        $data['pages'] = Pages::getAllPages();
         $data['roles'] = User_roles::all();
         $html = View('admin.users')->with('data', $data)->render();
         die($html);

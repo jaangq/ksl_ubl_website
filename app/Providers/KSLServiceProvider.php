@@ -25,5 +25,6 @@ class KSLServiceProvider extends ServiceProvider
     {
         //
         require_once app_path() . '/Helpers/KSL/Alerts.php';
+        require_once app_path() . '/Helpers/KSL/LessMore.php';
     }
 }

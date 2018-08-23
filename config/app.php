@@ -216,6 +216,7 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         // created manual
         'KSLAlert' => App\Helpers\KSL\Alerts::class,
+        'KSLLessMore' => App\Helpers\KSL\LessMore::class,
     ],
 
 ];

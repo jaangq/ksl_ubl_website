@@ -205,7 +205,7 @@ class DatabaseSeeder extends Seeder
         DB::table('pages')->insert([
           'id' => '3',
           'name' => 'Pelajaran',
-          'name_en' => 'Leason',
+          'name_en' => 'Lessons',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -282,5 +282,96 @@ class DatabaseSeeder extends Seeder
           'name_en' => 'video',
           'file_formats' => 'mp4'
         ]);
+
+        // seeding website_text
+        DB::table('website_text')->insert([
+          'id' => '1',
+          'label' => 'nomor telepon',
+          'label_en' => 'phone number',
+          'content' => '+6281388889999',
+          'content_en' => '+6281388889999',
+          'prefix' => 'contact',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '2',
+          'label' => 'email',
+          'label_en' => 'email',
+          'content' => 'admin@ksl-ubl.com',
+          'content_en' => 'admin@ksl-ubl.com',
+          'prefix' => 'contact',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '3',
+          'label' => 'alamat',
+          'label_en' => 'address',
+          'content' => 'Jl.Kenangan Di Sore Hari',
+          'content_en' => 'Jl.Kenangan Di Sore Hari',
+          'prefix' => 'address',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '4',
+          'label' => 'facebook',
+          'label_en' => 'facebook',
+          'content' => 'https://www.facebook.com/ksl-ubl',
+          'content_en' => 'https://www.facebook.com/ksl-ubl',
+          'prefix' => 'sosmed',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '5',
+          'label' => 'twitter',
+          'label_en' => 'twitter',
+          'content' => 'https://www.twitter.com/ksl-ubl',
+          'content_en' => 'https://www.twitter.com/ksl-ubl',
+          'prefix' => 'sosmed',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '6',
+          'label' => 'youtube',
+          'label_en' => 'youtube',
+          'content' => 'https://www.youtube.com/ksl-ubl',
+          'content_en' => 'https://www.youtube.com/ksl-ubl',
+          'prefix' => 'sosmed',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '7',
+          'label' => 'instagram',
+          'label_en' => 'instagram',
+          'content' => 'https://www.instagram.com/ksl-ubl/',
+          'content_en' => 'https://www.instagram.com/ksl-ubl/',
+          'prefix' => 'sosmed',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '8',
+          'label' => 'google+',
+          'label_en' => 'google+',
+          'content' => 'https://plus.google.com/114787876386455292333',
+          'content_en' => 'https://plus.google.com/114787876386455292333',
+          'prefix' => 'sosmed',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
     }
 }

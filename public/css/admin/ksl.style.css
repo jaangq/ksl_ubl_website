@@ -1,13 +1,10 @@
 section.sidebar {
-  background-color: #384a58;
   color: #ffffff;
+  background: linear-gradient(to right, #92628f, #694060);
 }
 section.sidebar ul {
   list-style: none;
   margin-bottom: 0;
-}
-section.sidebar ul li:first-child {
-  border-top: 1px solid #ffffff;
 }
 section.sidebar ul li {
   border-bottom: 1px solid #ffffff;
@@ -34,14 +31,101 @@ section.sidebar a:hover span {
   text-decoration: underline;
 }
 
-#app nav .container {
+@font-face {
+  font-family: "ConcertOne";
+  src: url("ConcertOne-Regular.ttf") format("truetype");
+}
+body {
+  font-size: 0.8em;
+}
+
+.w-40px {
+  width: 40px !important;
+}
+
+.fa-window-minimize, .fa-window-maximize {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.fa-window-minimize:hover, .fa-window-maximize:hover {
+  color: #000;
+}
+
+.overflow-x-scroll-none {
+  overflow-x: unset !important;
+}
+
+.font-concert-one {
+  font-family: "ConcertOne";
+}
+
+.prime-col {
+  color: #764a6e;
+}
+
+.second-col {
+  color: #58848d;
+}
+
+.third-col {
+  color: #79c0a0;
+}
+
+.v-bottom {
+  vertical-align: bottom;
+}
+
+label {
+  cursor: pointer;
+}
+
+#app nav.navbar-laravel {
+  background: linear-gradient(to right, #33102b, #2d7c8d);
+}
+#app nav.navbar-laravel .container {
   max-width: none;
+}
+#app nav.navbar-laravel .container a.navbar-brand, #app nav.navbar-laravel .container a.nav-link {
+  color: #fff;
+}
+
+section.col-md-2 {
+  flex: 0 0 13.667%;
+  max-width: 0 0 13.667%;
+}
+
+main.col-md-10 {
+  flex: 0 0 86.333%;
+  max-width: 86.333%;
+  padding: 0;
+}
+main.col-md-10 .content-head {
+  font-weight: 700;
+  font-size: 1.2em;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.cat-head-lbs .search-box-container, .sub-cat-head-lbs .search-box-container, .sub-sub-cat-head-lbs .search-box-container {
+  padding: 0;
+}
+.cat-head-lbs .search-box-container button.search-box-btn, .sub-cat-head-lbs .search-box-container button.search-box-btn, .sub-sub-cat-head-lbs .search-box-container button.search-box-btn {
+  width: 50px;
+  position: absolute;
+  right: -5px;
+}
+.cat-head-lbs .search-box-container input.search-box, .sub-cat-head-lbs .search-box-container input.search-box, .sub-sub-cat-head-lbs .search-box-container input.search-box {
+  position: absolute;
+  width: 100%;
+  right: unset;
+  padding-right: 57px;
 }
 
 .search-box-container button.search-box-btn {
   width: 50px;
 }
-
 .search-box-container input.search-box {
   position: absolute;
   width: 200px;
@@ -52,11 +136,61 @@ section.sidebar a:hover span {
 .card-body-table {
   overflow-x: scroll;
 }
-.card-body-table button {
+.card-body-table table.table button {
   width: 100px;
   margin: 5px;
 }
 .card-body-table .formModal label {
+  font-weight: bold;
+}
+
+.lessmore-btn {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.lessmore-btn:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+.nthnyali {
+  border: 1px solid #ddd;
+  border-bottom-color: #fff !important;
+  border-top: 3px solid #694060;
+}
+
+.profile_information_container .card-body-table {
+  overflow-x: hidden;
+}
+.profile_information_container .card-body-table nav {
+  z-index: 1;
+  position: relative;
+  top: 1px;
+}
+.profile_information_container .card-body-table nav ul {
+  list-style: none;
+  margin: 0;
+}
+.profile_information_container .card-body-table nav ul li {
+  display: inline-block;
+  font-size: 1.2em;
+  padding: 7px 10px;
+  font-weight: 700;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+}
+.profile_information_container .card-body-table nav ul li:hover {
+  color: #000;
+}
+.profile_information_container .card-body-table .container {
+  max-width: unset;
+  padding: 25px;
+  border: 1px solid #ddd;
+}
+.profile_information_container .card-body-table .container label {
   font-weight: bold;
 }
 
