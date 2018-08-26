@@ -1,0 +1,100 @@
+@import '../part/universal';
+
+// home
+body {
+  background-color: #000;
+}
+.home {
+  .cover {
+    height: 80vh;
+    padding: 0;
+    background-image: url($base_img+'linux_terminal_wallpaper.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    $b-radius-size: 100px;
+    border-bottom-left-radius: $b-radius-size;
+    border-bottom-right-radius: $b-radius-size;
+  }
+  .cover + div {
+    margin-top: 76.3vh;
+  }
+  .what-do-we-do {
+    background-color: #000;
+    color: #fff;
+  }
+  .learn-with-us {
+    color: #fff;
+    height: 100vh;
+    background-image: url($base_img+'ksl-bg-2.png');
+    background-attachment: fixed;
+    .learn-container {
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      .b-n-l {
+        // display: none;
+      }
+      .learn-com {
+        // display: none;
+        > p {
+          margin: 0;
+          background: aliceblue;
+          color: #000;
+          padding: 7px;
+          text-align: center;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          background-color: rgba(114,	160,	194, 0.8);;
+          color: #fff;
+          box-shadow: 1px 1px 15px #004d7e;
+        }
+        > p:hover {
+          background-color: rgb(114,	160,	194);
+        }
+        .f-lessons {
+          display: grid;
+          grid-template-columns: 50% 50%;
+          background-color: rgba(255, 255, 255, 0.8);
+          font-size: 1.5em;
+          box-shadow: 1px 1px 15px #004d7e;
+          > div {
+            text-align: center;
+            border: 1px solid #ddd;
+            > a {
+              width: 100%;
+              height: 100%;
+              display: block;
+              padding: 25px;
+              color: #000;
+              text-decoration: none;
+            }
+          }
+          > div:hover {
+            background-color: #fff;
+          }
+        }
+      }
+      .be-our-family {
+        // display: none;
+      }
+    }
+  }
+  .hot-news {
+    font-size: 0.9em;
+    background-color: #fff;
+    .title {
+      border-bottom: 1px solid #bbb;
+    }
+    img {
+      height: 200px;
+      width: 100%;
+    }
+    .news-box:hover {
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+    }
+  }
+
+}

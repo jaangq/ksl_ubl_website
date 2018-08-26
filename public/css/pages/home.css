@@ -1,0 +1,306 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "ConcertOne";
+  src: url("ConcertOne-Regular.ttf") format("truetype");
+}
+blockquote {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: Tahoma, sans-serif;
+  font-size: 40px;
+  width: 60%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+blockquote:hover {
+  color: #7bbae7;
+}
+
+blockquote h1 {
+  font-size: 4rem;
+}
+
+blockquote p {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+blockquote p::before,
+blockquote p::after {
+  content: "“";
+  font-family: Georgia;
+  font-size: 8rem;
+  margin: -2rem 0 0 -4rem;
+  position: absolute;
+  opacity: 0.5;
+}
+
+blockquote p::after {
+  content: "”";
+  margin: -1rem -4rem 0 0;
+}
+
+blockquote cite {
+  font-size: 1.5rem;
+}
+
+.crossed {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to top left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) calc(50% - 0.8px), black 50%, rgba(0, 0, 0, 0) calc(50% + 0.8px), rgba(0, 0, 0, 0) 100%), linear-gradient(to top right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) calc(50% - 0.8px), black 50%, rgba(0, 0, 0, 0) calc(50% + 0.8px), rgba(0, 0, 0, 0) 100%);
+}
+
+.half-crossed {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to top left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) calc(50% - 0.8px), black 50%, rgba(0, 0, 0, 0) calc(50% + 0.8px), rgba(0, 0, 0, 0) 100%);
+}
+
+.triangle-bottomleft {
+  width: 0;
+  height: 0;
+  border-bottom: 75vh solid white;
+  border-right: 98.5vw solid transparent;
+}
+
+.triangle-topright {
+  width: 0;
+  height: 0;
+  border-top: 75vh solid black;
+  border-left: 98.5vw solid transparent;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.a-link-anim-draw {
+  color: #000;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+  transition: color 0.25s;
+}
+.a-link-anim-draw::before, .a-link-anim-draw::after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.a-link-anim-draw::before, .a-link-anim-draw::after {
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+.a-link-anim-draw::before {
+  top: 0;
+  left: 0;
+}
+.a-link-anim-draw::after {
+  bottom: 0;
+  right: 0;
+}
+.a-link-anim-draw:hover::before, .a-link-anim-draw:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.a-link-anim-draw:hover::before {
+  border-top-color: #ddd;
+  border-right-color: #ddd;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.a-link-anim-draw:hover::after {
+  border-bottom-color: #ddd;
+  border-left-color: #ddd;
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+.a-link {
+  color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.a-link-white {
+  color: #fff;
+  cursor: pointer;
+}
+
+.a-link:hover, .a-link-white:hover {
+  color: #7bbae7;
+}
+
+.a-link-anim-bottom-border, body nav.navbar a:not(.nav-title) {
+  position: relative;
+  vertical-align: middle;
+  transition: color 0.25s;
+}
+.a-link-anim-bottom-border::after, body nav.navbar a:not(.nav-title)::after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  left: 0;
+}
+.a-link-anim-bottom-border:hover, body nav.navbar a:hover:not(.nav-title) {
+  color: #7bbae7;
+}
+.a-link-anim-bottom-border:hover::after, body nav.navbar a:hover:not(.nav-title)::after {
+  width: 100%;
+  height: 100%;
+  border-bottom-color: #7bbae7;
+  transition: border-color 0s ease-out, width 0.25s ease-out, height 0.25s ease-out;
+}
+
+.top-to-bottom {
+  width: 0;
+  word-wrap: break-word;
+}
+
+body {
+  font-family: "ConcertOne";
+  font-size: 1.15em;
+}
+body nav.navbar.nav-scrolled {
+  background-color: #000 !important;
+}
+body nav.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent !important;
+  z-index: 1;
+  height: 75px;
+  transition-duration: 1s;
+}
+body nav.navbar a {
+  color: #fff !important;
+  font-weight: 800;
+}
+body nav.navbar a:hover {
+  color: #7bbae7 !important;
+}
+body nav.navbar .fa-bars {
+  color: #fff;
+}
+body .ksl-logo {
+  height: 3.5em;
+  width: 3.5em;
+}
+body #navbarSupportedContent {
+  position: relative;
+  background: #000;
+  bottom: 6px;
+  z-index: 1;
+  padding: 15px;
+}
+body #navbarSupportedContent ul {
+  position: absolute;
+  right: 0;
+}
+body #navbarSupportedContent ul li a {
+  color: #fff;
+}
+body footer {
+  color: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+  body #navbarSupportedContent ul {
+    position: static;
+    right: unset;
+    text-align: center;
+  }
+}
+body {
+  background-color: #000;
+}
+
+.home .cover {
+  height: 80vh;
+  padding: 0;
+  background-image: url("http://127.0.0.1:8000/storage/images/linux_terminal_wallpaper.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+.home .cover + div {
+  margin-top: 76.3vh;
+}
+.home .what-do-we-do {
+  background-color: #000;
+  color: #fff;
+}
+.home .learn-with-us {
+  color: #fff;
+  height: 100vh;
+  background-image: url("http://127.0.0.1:8000/storage/images/ksl-bg-2.png");
+  background-attachment: fixed;
+}
+.home .learn-with-us .learn-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+.home .learn-with-us .learn-container .learn-com > p {
+  margin: 0;
+  background: aliceblue;
+  color: #000;
+  padding: 7px;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgba(114, 160, 194, 0.8);
+  color: #fff;
+  box-shadow: 1px 1px 15px #004d7e;
+}
+.home .learn-with-us .learn-container .learn-com > p:hover {
+  background-color: #72a0c2;
+}
+.home .learn-with-us .learn-container .learn-com .f-lessons {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5em;
+  box-shadow: 1px 1px 15px #004d7e;
+}
+.home .learn-with-us .learn-container .learn-com .f-lessons > div {
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.home .learn-with-us .learn-container .learn-com .f-lessons > div > a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 25px;
+  color: #000;
+  text-decoration: none;
+}
+.home .learn-with-us .learn-container .learn-com .f-lessons > div:hover {
+  background-color: #fff;
+}
+.home .hot-news {
+  font-size: 0.9em;
+  background-color: #fff;
+}
+.home .hot-news .title {
+  border-bottom: 1px solid #bbb;
+}
+.home .hot-news img {
+  height: 200px;
+  width: 100%;
+}
+.home .hot-news .news-box:hover {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+}
+
+/*# sourceMappingURL=home.css.map */

@@ -86,9 +86,9 @@
             <i class="fas fa-chevron-down d-none"></i>
           </a>
             <ul>
-              @foreach ($pages as $page)
-                <li><a href="#"><span>{{ $page->name_en }}</span></a></li>
-              @endforeach
+                @foreach ($pages as $page)
+                  <li><a href="#"><span>{{ $page->name_en }}</span></a></li>
+                @endforeach
             </ul>
           </li>
           <li><a href="{{ url('ksl/admin/posts') }}"><i class="fas fa-file"></i> <span>Posts</span></a></li>

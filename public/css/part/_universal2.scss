@@ -1,0 +1,19 @@
+body {
+  background-color: #fff;
+  #app {
+    nav.navbar {
+      position: static !important;
+      background-color: #1a1919 !important;
+      a {
+        // color: #fff !important;
+      }
+    }
+    .nav-news {
+
+    }
+  }
+  footer {
+    color: #fff;
+    background-color: #000;
+  }
+}
