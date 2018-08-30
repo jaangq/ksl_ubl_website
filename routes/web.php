@@ -14,12 +14,31 @@
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/posts', function () {
+    $paginatenya = App\AdminModel\Website_text::paginate(1);
+    return view('posts', ['paginatenya' => $paginatenya]);
+});
+Route::get('/news/{post}', function () {
+  return view('article');
+});
 Route::get('/news', function () {
     $paginatenya = App\AdminModel\Website_text::paginate(1);
     return view('news', ['paginatenya' => $paginatenya]);
 });
-Route::get('/news/{post}', function () {
-    return view('news_post');
+Route::get('/lessons/{cat}/{subcat}/{subsubcat?}', function () {
+  return view('article');
+});
+Route::get('/lessons/{cat}', function () {
+  return view('lesson_list');
+});
+Route::get('/lessons', function () {
+  return view('lessons');
+});
+Route::get('/about', function () {
+  return view('about');
+});
+Route::get('/contact', function () {
+  return view('contact');
 });
 Route::get('hello', function() {
     return view('hello');
@@ -49,15 +68,16 @@ Route::get('hello', function() {
 // Admin Auth Routes
 App\CustomRoutes\Router::AdminAuth();
 
-// Admin Users
-Route::resource('/ksl/admin/users', 'Admin\UsersController')->only([
-  'index', 'store', 'destroy', 'update', 'search'
+// Admin Profile Information
+Route::resource('/ksl/admin/profile-information', 'Admin\ProfileInformationController')->only([
+  'index', 'update'
 ])->middleware('auth');
 
-// Admin Tags
-Route::resource('/ksl/admin/tags', 'Admin\TagsController')->only([
-  'index', 'store', 'destroy', 'update', 'search'
+// Admin Pages
+Route::resource('/ksl/admin/pages/{page}', 'Admin\PagesController')->only([
+  'index', 'update'
 ])->middleware('auth');
+
 
 // Admin Categories
 Route::resource('/ksl/admin/categories', 'Admin\CategoriesController')->only([
@@ -76,10 +96,16 @@ Route::resource('ksl/admin/sub-sub-categories', 'Admin\SubSubCategoriesControlle
   'index', 'show', 'store', 'destroy', 'update'
 ])->middleware('auth');
 
-// Admin Profile Information
-Route::resource('/ksl/admin/profile-information', 'Admin\ProfileInformationController')->only([
-  'index', 'update'
+// Admin Users
+Route::resource('/ksl/admin/users', 'Admin\UsersController')->only([
+  'index', 'store', 'destroy', 'update', 'search'
 ])->middleware('auth');
+
+// Admin Tags
+Route::resource('/ksl/admin/tags', 'Admin\TagsController')->only([
+  'index', 'store', 'destroy', 'update', 'search'
+])->middleware('auth');
+
 
 
 // Default Admin LogIn to Dashboard

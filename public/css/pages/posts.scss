@@ -1,6 +1,6 @@
 @import '../part/universal';
 @import '../part/universal2';
-.nav-news {
+.nav-posts {
   background-color: #f1f3f5;
   ul {
     list-style: none;
@@ -26,7 +26,7 @@
       background-color: #fff;
     }
   }
-  .search-news {
+  .search-posts {
     right: 5%;
     bottom: 15px;
     input[type='text'] {
@@ -39,7 +39,7 @@
     }
   }
 }
-.news-box:hover {
+.posts-box:hover {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
 }

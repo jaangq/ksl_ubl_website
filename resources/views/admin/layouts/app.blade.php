@@ -87,7 +87,7 @@
           </a>
             <ul>
                 @foreach ($pages as $page)
-                  <li><a href="#"><span>{{ $page->name_en }}</span></a></li>
+                  <li><a href="{{ url('ksl/admin/pages/'.strtolower($page->name_en)) }}"><span>{{ $page->name_en }}</span></a></li>
                 @endforeach
             </ul>
           </li>

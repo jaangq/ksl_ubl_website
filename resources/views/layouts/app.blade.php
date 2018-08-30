@@ -14,6 +14,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/fontawesome-all.min.js') }}"></script>
     <script src="{{ asset('js/part/universal.js') }}"></script>
+    @yield('js-head')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -24,6 +25,16 @@
     @yield('css')
 </head>
 <body>
+    <div id="loader-page" class="loader">
+      <div class="circ">
+        <div class="load">Loading . . . </div>
+        <div class="hands"></div>
+        <div class="body"></div>
+        <div class="head">
+          <div class="eye"></div>
+        </div>
+      </div>
+    </div>
     <div id="app">
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand nav-title" href="/"><img class="ksl-logo" src="{{ asset('storage/images/logo_KSL-UBL.png') }}" alt="KSL-UBL"> Kelompok Study Linux - UBL </a>
@@ -37,16 +48,16 @@
               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('news')}}">News</a>
+              <a class="nav-link" href="{{url('posts')}}">Posts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Lessons</a>
+              <a class="nav-link" href="{{url('lessons')}}">Lessons</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="{{ url('about') }}">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="{{ url('contact') }}">Contact</a>
             </li>
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,6 +76,9 @@
         <main class="p-0">
             @yield('content')
         </main>
+    </div>
+    <div class="a-to-top">
+        <i class="fas fa-chevron-up"></i>
     </div>
     <footer class="p-3 text-center">
       <small>&copy;KSL(Kelompok Study Linux) 2018</small>

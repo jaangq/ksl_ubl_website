@@ -14,7 +14,7 @@
     <p class="h2 my-3 a-link-white">What is KSL and What Do We Do on KSL ?</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, if you want to learn more about us just click on <a class="about-page-link" href="#">About Page</a> .</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, if you want to learn more about us just click on <a class="about-page-link" href="{{ url('about') }}">About Page</a> .</p>
   </div>
   <div id="learn-with-us" class="learn-with-us">
     <div class="learn-container p-5">
@@ -24,10 +24,10 @@
           <div class="learn-com">
             <p class="h2 p-4">Besides Linux We Also Learn</p>
             <div class="f-lessons cursor-pointer">
-              <div><a href="#"><i class="fab fa-linux"></i><p>Linux</p></a></div>
-              <div><a href="#"><i class="fas fa-sitemap"></i><p>Networking</p></a></div>
-              <div><a href="#"><i class="fas fa-paint-brush"></i><p>Design</p></a></div>
-              <div><a href="#"><i class="fas fa-code"></i><p>Code</p></a></div>
+              <div><a href="{{ url('lessons/linux') }}"><i class="fab fa-linux"></i><p>Linux</p></a></div>
+              <div><a href="{{ url('lessons/linux') }}"><i class="fas fa-sitemap"></i><p>Networking</p></a></div>
+              <div><a href="{{ url('lessons/linux') }}"><i class="fas fa-paint-brush"></i><p>Design</p></a></div>
+              <div><a href="{{ url('lessons/linux') }}"><i class="fas fa-code"></i><p>Code</p></a></div>
             </div>
           </div>
         </div>

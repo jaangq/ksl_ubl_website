@@ -224,7 +224,7 @@ blockquote cite {
   transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
 }
 
-.a-link {
+.a-link, .article .article .comment-box .comment-user .comment-header .user-name, .article .sosmed-icon span a {
   color: rgba(0, 0, 0, 0.9);
   cursor: pointer;
 }
@@ -234,7 +234,7 @@ blockquote cite {
   cursor: pointer;
 }
 
-.a-link:hover, .a-link-white:hover {
+.a-link:hover, .article .article .comment-box .comment-user .comment-header .user-name:hover, .article .sosmed-icon span a:hover, .a-link-white:hover {
   color: #7bbae7;
 }
 
@@ -484,89 +484,203 @@ body footer {
   }
 }
 body {
+  background-color: #fff;
+}
+body #app nav.navbar {
+  position: static !important;
+  background-color: #1a1919 !important;
+  box-shadow: 1px 1px 5px;
+}
+body footer {
+  color: #fff;
   background-color: #000;
 }
 
-.home .cover {
-  height: 80vh;
-  padding: 0;
-  background-image: url("http://localhost/ksl_ubl_website/storage/app/public/images/linux_terminal_wallpaper.png");
+.nav-lessons, .article nav {
+  border-bottom: 2px solid #ececec;
+}
+.nav-lessons ul, .article nav ul {
+  list-style: none;
+  margin: 0;
+}
+.nav-lessons ul li, .article nav ul li {
+  display: inline-block;
+}
+.nav-lessons ul li a, .article nav ul li a {
+  display: inline-block;
+  color: #484848;
+  font-weight: 600;
+  padding: 20px 15px;
+}
+.nav-lessons ul li:hover > a, .article nav ul li:hover > a {
+  color: #7bbae7;
+  text-decoration: none;
+}
+.nav-lessons ul li:hover:not(.chevron), .article nav ul li:hover:not(.chevron) {
+  background-color: #ececec;
+}
+
+.article .cover {
+  height: 70vh;
+  background-image: url("http://localhost/ksl_ubl_website/storage/app/public/images/../dummy_images/dummy0.jpg");
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+  position: relative;
 }
-.home .cover + div {
-  margin-top: 76.3vh;
-}
-.home .what-do-we-do {
-  background-color: #000;
-  color: #fff;
-}
-.home .learn-with-us {
-  color: #fff;
-  height: 100vh;
-  background-image: url("http://localhost/ksl_ubl_website/storage/app/public/images/ksl-bg-2.png");
-  background-attachment: fixed;
-}
-.home .learn-with-us .learn-container {
+.article .cover .cover-bg {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
-}
-.home .learn-with-us .learn-container .learn-com > p {
-  margin: 0;
-  background: aliceblue;
-  color: #000;
-  padding: 7px;
-  text-align: center;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-color: rgba(114, 160, 194, 0.8);
   color: #fff;
-  box-shadow: 1px 1px 15px #004d7e;
+  padding-top: 200px;
+  text-shadow: 1px 1px 2px #000;
 }
-.home .learn-with-us .learn-container .learn-com > p:hover {
-  background-color: #72a0c2;
-}
-.home .learn-with-us .learn-container .learn-com .f-lessons {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5em;
-  box-shadow: 1px 1px 15px #004d7e;
-}
-.home .learn-with-us .learn-container .learn-com .f-lessons > div {
+.article .cover .cover-bg .title {
+  width: 100%;
   text-align: center;
-  border: 1px solid #ddd;
+  margin: 0;
 }
-.home .learn-with-us .learn-container .learn-com .f-lessons > div > a {
+.article .cover .cover-bg .img-container {
+  text-align: center;
+}
+.article .cover .cover-bg .img-container img {
+  width: 5%;
+  box-shadow: 1px 1px 5px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.article nav ul li:hover:not(.chevron), .article nav .subcat nav ul li:hover:not(.chevron) {
+  background-color: unset;
+}
+.article .sosmed-icon {
+  position: absolute;
+  padding: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  z-index: 1;
+}
+.article .sosmed-icon span {
+  display: block;
+  box-shadow: 1px 1px 5px;
+  background: #f3f3f3;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  margin: 10px;
+}
+.article .sosmed-icon span a {
   width: 100%;
   height: 100%;
-  display: block;
-  padding: 25px;
+  display: inline-block;
+}
+.article .sosmed-icon span a .fab {
+  border-radius: 50%;
+}
+.article .sosmed-icon-start {
+  position: absolute;
+  top: unset;
+}
+.article .sosmed-icon-mid {
+  position: fixed;
+  top: 0;
+}
+.article .sosmed-icon-end {
+  position: absolute;
+  top: 212vh;
+}
+.article .article p {
+  margin-bottom: 2.2rem;
+}
+.article .article .headline {
+  font-size: 1.1em;
   color: #000;
-  text-decoration: none;
 }
-.home .learn-with-us .learn-container .learn-com .f-lessons > div:hover {
-  background-color: #fff;
+.article .article .headline::first-letter {
+  float: left;
+  font-size: 300%;
+  color: #7bbae7;
+  padding: 10px 7px 5px 0;
 }
-.home .hot-news {
-  font-size: 0.9em;
-  background-color: #fff;
+.article .article .tags span {
+  border: 2px solid #ccc;
+  box-shadow: 1px 1px 5px #ccc;
+  display: inline-block;
+  border-radius: 5px;
+  color: #555;
+  cursor: pointer;
 }
-.home .hot-news .title {
-  border-bottom: 1px solid #bbb;
+.article .article .tags span:hover {
+  background-color: #7bbae7;
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 1px 1px 5px #fff;
 }
-.home .hot-news img {
-  height: 200px;
-  width: 100%;
+.article .article .comment-box textarea {
+  font-size: 1em;
+  border: 2px solid #ccc;
+  border-bottom: none;
+  padding-bottom: 50px;
 }
-.home .hot-news .news-box:hover {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
+.article .article .comment-box .comment-txt-bottom {
+  background-color: #f6f8f9;
+  border: 2px solid #ccc;
+  bottom: 48px;
+}
+.article .article .comment-box .comment-txt-bottom p, .article .article .comment-box .comment-txt-bottom div {
+  display: inline-block;
+}
+.article .article .comment-box .comment-txt-bottom .login-comment {
+  font-size: 0.7em;
+}
+.article .article .comment-box .comment-txt-bottom .btn-comments {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+.article .article .comment-box .comment-user .comment-cont {
+  border: 1px solid #ccc;
+  margin: 35px 5px;
+}
+.article .article .comment-box .comment-user .comment-header {
+  position: relative;
+}
+.article .article .comment-box .comment-user .comment-header .user-name {
+  font-size: 1.2em;
+  color: #007bff;
+  font-weight: bold;
+}
+.article .article .comment-box .comment-user .comment-header .user-dp {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  top: 0;
+  right: 0;
+}
+.article .article .comment-box .comment-user .comment-header .user-dp img {
+  border-radius: 5px;
+}
+.article .article .comment-box .comment-user .comment-content {
+  font-size: 1em;
+  text-align: justify;
+}
+.article .article .comment-box .comment-user .comment-foot {
+  position: relative;
+}
+.article .article .comment-box .comment-user .comment-foot .btn-foot-comments {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.article .article .comment-box .comment-user .comment-foot .btn-foot-comments p {
+  display: inline-block;
+}
+.article .article .comment-box .comment-user .comment-foot::after {
+  content: ".";
+  color: transparent;
 }
 
-/*# sourceMappingURL=home.css.map */
+/*# sourceMappingURL=article.css.map */

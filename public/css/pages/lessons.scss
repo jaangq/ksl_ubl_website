@@ -1,0 +1,66 @@
+@import '../part/universal';
+@import '../part/universal2';
+@import '../part/nav_lessons';
+
+@font-face {
+    font-family: 'JosefinSans';
+    src: url($base_fonts+'JosefinSans-Regular.ttf') format('truetype');
+ }
+
+.lessons {
+  .cover {
+    height: 50vh;
+    background-color: #aeb655;
+    // background: linear-gradient(to right, #aeb655, #bc8e4a);
+    // background:rgb(223,189,150);
+    position: relative;
+    box-shadow: 1px 1px 5px;
+    .cover-text {
+      font-family: 'JosefinSans';
+      color: #fff;
+      position: absolute;
+      margin: 20vh auto;
+      margin-top: 30vh;
+      text-align: center;
+      width: 100%;
+      font-size: 1.5em;
+      font-weight: 800;
+    }
+  }
+  nav {
+    @extend .nav-lessons;
+  }
+  section {
+    background-color: #fcfcfc;
+    padding: 25px 100px;
+    // background-color: #f3f3f3;
+    a {
+      display: block;
+      color: #2a2a2a;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #000;
+      box-shadow: 1px 1px 15px #aaa;
+    }
+    .lessons-cat {
+      text-align: center;
+      text-shadow: 1px 1px 5px #fff;
+      .lesson-content {
+        background-color: #c9f8df;
+        padding: 45px;
+        .image {
+          .ficon {
+            display: inline-block;
+            font-size: 5em;
+          }
+        }
+        .desc {
+          font-size: 1.5em;
+          padding: 1rem 0;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

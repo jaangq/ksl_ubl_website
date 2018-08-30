@@ -373,5 +373,77 @@ class DatabaseSeeder extends Seeder
           'updated_at' => date('Y-m-d H:i:s')
         ]);
 
+        DB::table('website_text')->insert([
+          'id' => '9',
+          'label' => 'home quotes',
+          'label_en' => 'home quotes',
+          'content' => '<p>The Linux philosophy is \'<strong>Laugh in the face of danger</strong>\'. <strong>Oops. Wrong One.</strong> \'<strong>Do it yourself</strong>\'. <strong>Yes, that\'s it.</strong></p><cite>Linux Torvalds</cite>',
+          'content_en' => '<p>The Linux philosophy is \'<strong>Laugh in the face of danger</strong>\'. <strong>Oops. Wrong One.</strong> \'<strong>Do it yourself</strong>\'. <strong>Yes, that\'s it.</strong></p><cite>Linux Torvalds</cite>',
+          'prefix' => '',
+          'id_pages' => '1',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '10',
+          'label' => 'what is and what we do on ksl',
+          'label_en' => 'what is and what we do on ksl',
+          'content' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, if you want to learn more about us just click on <a class="about-page-link" href="http://127.0.0.1:8000/about">About Page</a> .</p>',
+          'content_en' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, if you want to learn more about us just click on <a class="about-page-link" href="http://127.0.0.1:8000/about">About Page</a> .</p>',
+          'prefix' => '',
+          'id_pages' => '1',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '11',
+          'label' => 'Besides Linux We Also Learn',
+          'label_en' => 'Besides Linux We Also Learn',
+          'content' => 'Besides Linux We Also Learn',
+          'content_en' => 'Besides Linux We Also Learn',
+          'prefix' => '',
+          'id_pages' => '1',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '12',
+          'label' => 'Be Our Family and Learn With Us',
+          'label_en' => 'Be Our Family and Learn With Us',
+          'content' => 'Be Our Family and Learn With Us',
+          'content_en' => 'Be Our Family and Learn With Us',
+          'prefix' => '',
+          'id_pages' => '1',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '13',
+          'label' => 'Text For Be Our Family and Learn With Us',
+          'label_en' => 'Text For Be Our Family and Learn With Us',
+          'content' => '<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>',
+          'content_en' => '<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>',
+          'prefix' => '',
+          'id_pages' => '1',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '14',
+          'label' => 'Let\'s See the Latest News From Us',
+          'label_en' => 'Let\'s See the Latest News From Us',
+          'content' => 'Let\'s See the Latest News From Us',
+          'content_en' => 'Let\'s See the Latest News From Us',
+          'prefix' => '',
+          'id_pages' => '1',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
     }
 }

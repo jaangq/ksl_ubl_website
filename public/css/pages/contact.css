@@ -484,89 +484,85 @@ body footer {
   }
 }
 body {
+  background-color: #fff;
+}
+body #app nav.navbar {
+  position: static !important;
+  background-color: #1a1919 !important;
+  box-shadow: 1px 1px 5px;
+}
+body footer {
+  color: #fff;
   background-color: #000;
 }
 
-.home .cover {
-  height: 80vh;
-  padding: 0;
-  background-image: url("http://localhost/ksl_ubl_website/storage/app/public/images/linux_terminal_wallpaper.png");
+.contact {
+  background-color: #efefef;
+}
+.contact .cover {
+  height: 30vh;
+  width: 100%;
+  background: #363d44;
+  font-weight: 600;
+  font-size: 2.2em;
+  padding: 50px;
+  color: #f5f5f5;
+  background-image: url("http://localhost/ksl_ubl_website/storage/app/public/images/penguin-contact.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+  background-position: bottom;
+  text-shadow: 1px 1px 1px #3c494b;
+  box-shadow: 1px 1px 5px #3c494b;
+  -webkit-filter: brightness(3);
+  filter: brightness(3);
 }
-.home .cover + div {
-  margin-top: 76.3vh;
+.contact section {
+  padding: 50px;
 }
-.home .what-do-we-do {
-  background-color: #000;
-  color: #fff;
-}
-.home .learn-with-us {
-  color: #fff;
-  height: 100vh;
-  background-image: url("http://localhost/ksl_ubl_website/storage/app/public/images/ksl-bg-2.png");
-  background-attachment: fixed;
-}
-.home .learn-with-us .learn-container {
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
-}
-.home .learn-with-us .learn-container .learn-com > p {
-  margin: 0;
-  background: aliceblue;
-  color: #000;
-  padding: 7px;
-  text-align: center;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-color: rgba(114, 160, 194, 0.8);
-  color: #fff;
-  box-shadow: 1px 1px 15px #004d7e;
-}
-.home .learn-with-us .learn-container .learn-com > p:hover {
-  background-color: #72a0c2;
-}
-.home .learn-with-us .learn-container .learn-com .f-lessons {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5em;
-  box-shadow: 1px 1px 15px #004d7e;
-}
-.home .learn-with-us .learn-container .learn-com .f-lessons > div {
-  text-align: center;
-  border: 1px solid #ddd;
-}
-.home .learn-with-us .learn-container .learn-com .f-lessons > div > a {
-  width: 100%;
-  height: 100%;
-  display: block;
-  padding: 25px;
-  color: #000;
-  text-decoration: none;
-}
-.home .learn-with-us .learn-container .learn-com .f-lessons > div:hover {
+.contact section .row {
   background-color: #fff;
 }
-.home .hot-news {
-  font-size: 0.9em;
-  background-color: #fff;
+.contact section .left label {
+  font-weight: 500;
+  cursor: pointer;
+  color: #333;
 }
-.home .hot-news .title {
-  border-bottom: 1px solid #bbb;
+.contact section .left label:hover {
+  color: #000;
 }
-.home .hot-news img {
-  height: 200px;
+.contact section .left button {
+  font-weight: 500;
+}
+.contact section .right .contact-info div p:first-child {
+  color: #517fad;
+  font-weight: 600;
+}
+.contact section .right .map-cont {
+  position: relative;
+}
+.contact section .right .map-cont #map {
   width: 100%;
+  height: 80vh;
+  background-color: grey;
 }
-.home .hot-news .news-box:hover {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
+.contact section .right .map-cont #menu {
+  z-index: 2;
+  background: #555;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  text-align: justify;
+}
+.contact section .right .map-cont #menu span {
+  display: inline-block;
+}
+.contact section .right .map-cont #menu input, .contact section .right .map-cont #menu label {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+.contact section .right .map-cont #menu label {
+  margin-right: 5px;
 }
 
-/*# sourceMappingURL=home.css.map */
+/*# sourceMappingURL=contact.css.map */

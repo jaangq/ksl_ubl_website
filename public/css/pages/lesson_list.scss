@@ -1,0 +1,29 @@
+@import '../part/universal';
+@import '../part/universal2';
+@import '../part/nav_lessons';
+
+.lesson-list {
+  nav {
+    @extend .nav-lessons;
+    ul li:hover:not(.chevron), .subcat nav ul li:hover:not(.chevron) {
+      background-color: unset;
+    }
+  }
+  section {
+    .list-a-z {
+      font-size: 1em;
+      span {
+        display: inline-block;
+        padding: 5px;
+        a {
+          font-weight: 500;
+        }
+      }
+    }
+    .content {
+      .ul-list {
+        list-style: circle;
+      }
+    }
+  }
+}
