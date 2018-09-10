@@ -177,9 +177,12 @@ class SubSubCategoriesController extends Controller
                               ->select('sub_sub_categories.*', 'sub_categories.id as cat_sub_id')
                               ->orderBy('sub_categories.id', 'DESC')
                               ->paginate(3);
-
-        $html = View('admin.sub_sub_categories')->with('data', $data)->render();
-        die($html);
+        if($request->has('dataonly')) {
+          return $data['sub_sub_categories'];
+        } else {
+          $html = View('admin.sub_sub_categories')->with('data', $data)->render();
+          die($html);
+        }
 
     }
 }

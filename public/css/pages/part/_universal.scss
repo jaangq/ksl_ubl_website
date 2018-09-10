@@ -1,0 +1,541 @@
+$base_url: 'http://localhost/ksl_ubl_website/';
+$base_img: $base_url+'storage/app/public/images/';
+$base_fonts: $base_url+'public/fonts/';
+$blue_link: rgb(123, 186, 231);
+@font-face {
+    font-family: 'ConcertOne';
+    src: url($base_fonts+'ConcertOne-Regular.ttf') format('truetype');
+ }
+
+// helper
+// blockquote
+blockquote {
+   // color: rgba(250, 200, 130, 0.6);
+   color: rgba(255, 255, 255, 0.9);
+   font-family: Tahoma, sans-serif;
+   font-size: 40px;
+   width: 60%;
+   margin: 0 auto;
+   cursor: pointer;
+   // transition-duration: 1s;
+}
+blockquote:hover {
+  color: $blue_link;
+}
+blockquote h1 {
+   font-size: 4rem;
+}
+blockquote p {
+   font-style: italic;
+   margin-bottom: 0;
+}
+
+blockquote p::before,
+blockquote p::after {
+   content: "“";
+   font-family: Georgia;
+   font-size: 8rem;
+   margin: -2rem 0 0 -4rem;
+   position: absolute;
+   opacity: 0.5;
+}
+
+blockquote p::after {
+   content: "”";
+   margin: -1rem -4rem 0 0;
+}
+
+blockquote cite {
+   font-size: 1.5rem;
+}
+// coffee
+
+.cup {
+  width:76px;
+  height:76px;
+  background:#dedede;
+  border-radius:50%;
+  position:absolute;
+  left:50%;
+  margin-left:-38px;
+  top:100px;
+  box-shadow:-4px -1px 0 rgba(0,0,0,0.2);
+}
+
+.cup:after{
+  content:"";
+  width:66px;
+  height:66px;
+  position:absolute;
+  border-radius:50%;
+  background:linear-gradient(-45deg, #cbcbcb, #f2f2f2 );
+  left:50%;
+  margin-left:-33px;
+  top:5px;
+}
+
+.coffee{
+  width:47px;
+  height:47px;
+  background:#613317;
+  /*background-image: linear-gradient(15deg, transparent 0px, transparent 29px, rgba(255,255,255,0.05) 29px, rgba(255,255,255,0.05) 47px);*/
+  border-radius:50%;
+  position:absolute;
+  left:50%;
+  margin-left:-25px;
+  z-index:1;
+  top:50%;
+  margin-top:-26px;
+  border:3px solid #e9e9e9;
+  box-shadow:-3px 2px 0 rgba(0,0,0,0.1);
+  transform:rotate(30deg);
+  transition:transform 0.3s;
+}
+
+.coffee:after{ /*assa*/
+ content:"";
+  width:15px;
+  height:8px;
+  position:absolute;
+  left:-19px;
+  top:18px;
+  background:linear-gradient(90deg, #d6d6d6, #aeaeae);
+  box-shadow:0px 2px 0 rgba(0,0,0,0.2);
+}
+
+.coffee:before {
+  content:"";
+  width:47px;
+  height:47px;
+  background-image: radial-gradient(75% 59%, ellipse, rgba(255,255,255,0.2), transparent 95%), radial-gradient(5% 9%, ellipse, rgba(255,255,255,0.1), transparent 5%), radial-gradient(0% 0%, ellipse, rgba(255,255,255,0.3), transparent 55%);
+  background-image: -webkit-radial-gradient(75% 59%, ellipse, rgba(255,255,255,0.2), transparent 95%), -webkit-radial-gradient(5% 9%, ellipse, rgba(255,255,255,0.1), transparent 5%), -webkit-radial-gradient(0% 0%, ellipse, rgba(255,255,255,0.3), transparent 55%);
+  background-image: -moz-radial-gradient(75% 59%, ellipse, rgba(255,255,255,0.2), transparent 95%), -moz-radial-gradient(5% 9%, ellipse, rgba(255,255,255,0.1), transparent 5%), -moz-radial-gradient(0% 0%, ellipse, rgba(255,255,255,0.3), transparent 55%);
+  position:absolute;
+  left:0;
+  border-radius:50%;
+}
+.cup:hover .coffee {
+  transform:rotate(15deg);
+}
+
+.smoke {
+  width:70px;
+  height:100px;
+  position:absolute;
+  left:50%;
+  margin-left:-40px;
+  top:43px;
+  background-image: -webkit-radial-gradient(75% 59%, ellipse, rgba(255,255,255,0.2), transparent 25%), -webkit-radial-gradient(25% 70%, ellipse, rgba(255,255,255,0.2), transparent 15%), -webkit-radial-gradient(35% 61%, ellipse, rgba(255,255,255,0.2), transparent 10%), -webkit-radial-gradient(55% 35%, ellipse, rgba(255,255,255,0.2), transparent 15%);
+  background-image: -moz-radial-gradient(75% 59%, ellipse, rgba(255,255,255,0.2), transparent 25%), -moz-radial-gradient(25% 70%, ellipse, rgba(255,255,255,0.2), transparent 15%), -moz-radial-gradient(35% 61%, ellipse, rgba(255,255,255,0.2), transparent 10%), -moz-radial-gradient(55% 35%, ellipse, rgba(255,255,255,0.2), transparent 15%);
+  background-image: radial-gradient(75% 59%, ellipse, rgba(255,255,255,0.2), transparent 25%), radial-gradient(25% 70%, ellipse, rgba(255,255,255,0.2), transparent 15%), radial-gradient(35% 61%, ellipse, rgba(255,255,255,0.2), transparent 10%), radial-gradient(55% 35%, ellipse, rgba(255,255,255,0.2), transparent 15%);
+  animation:bk 11s infinite ;
+}
+
+.smoke:after {
+  content:"";
+  width:100px;
+  height:100px;
+  position:absolute;
+  background-image: -webkit-radial-gradient(75% 59%, ellipse, rgba(255,255,255,0.2), transparent 25%), -webkit-radial-gradient(25% 70%, ellipse, rgba(255,255,255,0.2), transparent 15%), -webkit-radial-gradient(35% 61%, ellipse, rgba(255,255,255,0.2), transparent 10%);
+  background-image: -moz-radial-gradient(75% 59%, ellipse, rgba(255,255,255,0.2), transparent 25%), -moz-radial-gradient(25% 70%, ellipse, rgba(255,255,255,0.2), transparent 15%), -moz-radial-gradient(35% 61%, ellipse, rgba(255,255,255,0.2), transparent 10%);
+  background-image: radial-gradient(75% 59%, ellipse, rgba(255,255,255,0.2), transparent 25%), radial-gradient(25% 70%, ellipse, rgba(255,255,255,0.2), transparent 15%), radial-gradient(35% 61%, ellipse, rgba(255,255,255,0.2), transparent 10%);
+  animation:bk 2s 1s infinite;
+}
+
+
+@keyframes bk {
+  0%{ background-position:0 0; opacity:0; }
+  15%, 85% { opacity:1;}
+  100%{ background-position:-20px -25px, -5px -25px, 0px -25px, 0px -25px; opacity:0;}
+}
+
+// diagonal line
+.crossed {
+    height: 100vh;
+    width: 100vw;
+    background:
+       linear-gradient(to top left,
+           rgba(0,0,0,0) 0%,
+           rgba(0,0,0,0) calc(50% - 0.8px),
+           rgba(0,0,0,1) 50%,
+           rgba(0,0,0,0) calc(50% + 0.8px),
+           rgba(0,0,0,0) 100%),
+       linear-gradient(to top right,
+           rgba(0,0,0,0) 0%,
+           rgba(0,0,0,0) calc(50% - 0.8px),
+           rgba(0,0,0,1) 50%,
+           rgba(0,0,0,0) calc(50% + 0.8px),
+           rgba(0,0,0,0) 100%);
+}
+.half-crossed {
+    height: 100vh;
+    width: 100vw;
+    background:
+       linear-gradient(to top left,
+           rgba(0,0,0,0) 0%,
+           rgba(0,0,0,0) calc(50% - 0.8px),
+           rgba(0,0,0,1) 50%,
+           rgba(0,0,0,0) calc(50% + 0.8px),
+           rgba(0,0,0,0) 100%);
+}
+// triangle bottom-left & top-right
+.triangle-bottomleft { width: 0; height: 0; border-bottom: 75vh solid white; border-right: 98.5vw solid transparent; }
+.triangle-topright { width: 0; height: 0; border-top: 75vh solid black; border-left: 98.5vw solid transparent; }
+.cursor-pointer { cursor: pointer; }
+.a-link-anim-draw {
+  //
+  // Using inset box-shadow instead of border for sizing simplicity
+  // box-shadow: inset 0 0 0 2px red;
+  color: #000;
+  font-size: inherit;
+  font-weight: 700;
+
+  // Required, since we're setting absolute on pseudo-elements
+  position: relative;
+  vertical-align: middle;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  transition: color 0.25s;
+
+    &::before,
+    &::after {
+      // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+      border: 2px solid transparent;
+      width: 0;
+      height: 0;
+    }
+
+    // This covers the top & right borders (expands right, then down)
+    &::before {
+      top: 0;
+      left: 0;
+    }
+
+    // And this the bottom & left borders (expands left, then up)
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+
+    &:hover {
+      // color: $blue_link;
+    }
+
+    // Hover styles
+    &:hover::before,
+    &:hover::after {
+      width: 100%;
+      height: 100%;
+    }
+    $border-draw: #ddd;
+    &:hover::before {
+      border-top-color: $border-draw; // Make borders visible
+      border-right-color: $border-draw;
+      transition:
+      width 0.25s ease-out, // Width expands first
+      height 0.25s ease-out 0.25s; // And then height
+    }
+
+    &:hover::after {
+      border-bottom-color: $border-draw; // Make borders visible
+      border-left-color: $border-draw;
+      transition:
+        border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
+        width 0.25s ease-out 0.5s, // And then exanding width
+        height 0.25s ease-out 0.75s; // And finally height
+    }
+
+  //
+}
+.a-link {
+  color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+.a-link-white {
+  color: #fff;
+  cursor: pointer;
+}
+.a-link:hover, .a-link-white:hover {
+  color: $blue_link;
+}
+.a-link-anim-bottom-border {
+  // Required, since we're setting absolute on pseudo-elements
+  position: relative;
+  vertical-align: middle;
+  transition: color 0.25s;
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+    // And this the bottom & left borders (expands left, then up)
+    bottom: 0;
+    left: 0;
+  }
+
+  &:hover {
+    color: $blue_link;
+  }
+
+  &:hover::after {
+    // Hover styles
+    width: 100%;
+    height: 100%;
+    border-bottom-color: $blue_link; // Make borders visible
+    transition:
+    border-color 0s ease-out, // Wait for ::before to finish before showing border
+    width 0.25s ease-out, // And then exanding width
+    height 0.25s ease-out; // And finally height
+  }
+}
+.top-to-bottom{
+  width: 0;
+  word-wrap: break-word;
+}
+// end helper
+body {
+  font-family: 'ConcertOne';
+  font-size: 1.15em;
+  nav.navbar.nav-scrolled {
+    background-color: #000 !important;
+  }
+  nav.navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent !important;
+    z-index: 1;
+    height: 75px;
+    transition-duration: 1s;
+    a:not(.nav-title) {
+      @extend .a-link-anim-bottom-border;
+    }
+    a {
+      color: #fff !important;
+      font-weight: 700;
+    }
+    a:hover {
+      color: $blue_link !important;
+    }
+    .fa-bars {
+      color: #fff;
+    }
+  }
+  .ksl-logo {
+    $wh: 3.5em;
+    height: $wh;
+    width: $wh;
+  }
+  #navbarSupportedContent {
+    position: relative;
+    bottom: 6px;
+    z-index: 1;
+    padding: 15px;
+    ul {
+      position: absolute;
+      right: 0;
+      li {
+        a, span {
+          color: #fff;
+        }
+        span.lang {
+          cursor: pointer;
+          display: inline-block;
+          @extend .a-link-anim-bottom-border;
+          .lang-choice[val="en"] {
+            // display: none;
+          }
+          ul {
+            display: none;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border: 1px solid #f0f0f0;
+            width: 100%;
+            right: 0;
+            margin-top: 7px;
+            background-color: rgba(0, 0, 0, 0.7  );
+            li.lang-choice {
+              @extend .a-link-anim-bottom-border;
+              padding: 5px 20px;
+              color: #fff;
+              strong {
+                padding-left: 10px; 
+              }
+            }
+            li.lang-choice:first-child {
+              border-bottom: 1px solid #fff;
+            }
+          }
+        }
+        span.lang::before {
+          content: "";
+          border-left: 3px solid #fff;
+          padding-right: 7px;
+        }
+      }
+    }
+  }
+  footer {
+    color: #fff;
+  }
+}
+// .navbar-light .navbar-nav span.nav-link {
+//   color: #fff;
+// }
+// a-to-top
+.a-to-top {
+  display: none;
+  background-color: #fff;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-size: 2em;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  cursor: pointer;
+  color: #555;
+  box-shadow: 1px 1px 5px #555;
+}
+.a-to-top:hover {
+  color: #000;
+  transform: translateY(-2px);
+}
+// animation loader
+.loader {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 5;
+  background-color: #111;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  .eye{
+    width: 20px; height: 8px;
+    background-color: rgba(240,220,220,1);
+    border-radius:0px 0px 20px 20px;
+    position: relative;
+    left: 10px; top: 40px;
+    box-shadow:  40px 0px 0px 0px rgba(240,220,220,1);
+  }
+
+  .head{
+    -webkit-backface-visibility: hidden;
+    position: relative;
+    margin: -250px auto;
+    width: 80px; height: 80px;
+    background-color: #111;
+    border-radius:50px;
+    box-shadow: inset -4px 2px 0px 0px rgba(240,220,220,1);
+    -webkit-animation:headAnim 1.5s infinite alternate;
+    -webkit-animation-timing-function:ease-out;
+  }
+
+  .body{
+    position: relative;
+    margin: 90px auto;
+    width: 140px; height: 120px;
+    background-color: #111;
+    border-radius: 50px/25px ;
+    box-shadow: inset -5px 2px 0px 0px rgba(240,220,220,1);
+    -webkit-animation:bodyAnim 1.5s infinite alternate;
+    -webkit-animation-timing-function:ease-out;
+  }
+
+    @-webkit-keyframes headAnim{
+           0%{ top:0px; }
+           50%{ top:10px; }
+           100% { top:0px;}
+    }
+
+    @-webkit-keyframes bodyAnim{
+           0%{ top:-5px; }
+           50%{ top:10px; }
+           100% { top:-5px;}
+    }
+
+  .circ{
+    -webkit-backface-visibility: hidden;
+    margin: 60px auto;
+    width: 180px; height: 180px;
+    background-color: #111;
+    border-radius: 0px 0px 50px 50px;
+    position: relative;
+    z-index: -1;
+    left: 0%; top: 20%;
+    overflow: hidden;
+  }
+
+  .hands{
+    -webkit-backface-visibility: hidden;
+    margin-top: 140px;
+    width: 120px;height: 120px;
+    position: absolute;
+    background-color: #111;
+    border-radius:20px;
+    box-shadow:-1px -4px 0px 0px rgba(240,220,220,1);
+    -webkit-transform:rotate(45deg);
+    top:75%;left: 16%;
+    z-index: 1;
+    -webkit-animation:bodyAnim 1.5s infinite alternate;
+    -webkit-animation-timing-function:ease-out;
+  }
+
+  .load{
+    position: absolute;
+    width: 7ch; height: 32px;
+    text-align: left;
+    line-height: 32px;
+    margin: -10px auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size:28px;
+    font-weight:400;
+    color:rgba(240,220,220,1);
+    left: 2%; top: 5%;
+    -webkit-animation:fontAnim 3.75s infinite;
+    -webkit-animation-timing-function:ease-out;
+    word-wrap: break-word;
+    display:block;
+    overflow: hidden;
+  }
+
+    @-webkit-keyframes fontAnim{
+          0%{ width:7ch; }
+         16%{ width:8ch; }
+         32%{ width:9ch; }
+         48%{ width:10ch; }
+         64%{ width:11ch; }
+         80%{ width:12ch; }
+       100% { width:13ch;}
+    }
+}
+// end animation loader
+
+
+@media only screen and (max-width: 992px) {
+  body {
+    #navbarSupportedContent {
+      ul {
+        position: static;
+        right: unset;
+        text-align: center;
+      }
+    }
+  }
+}

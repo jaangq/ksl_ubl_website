@@ -1,4 +1,4 @@
-// universal
+  // universal
 $prime-col : #764a6e;
 $second-col : #58848d;
 $third-col : #79c0a0;
@@ -51,6 +51,12 @@ label {
       max-width: none;
       a.navbar-brand, a.nav-link {
         color: #fff;
+      }
+      a.navbar-brand {
+        padding: 0;
+        img.img {
+          height: 60px;
+        }
       }
     }
   }

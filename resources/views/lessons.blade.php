@@ -11,7 +11,7 @@
       <div class="coffee"></div>
     </div>
     <div class="smoke"></div>
-    <p class="cover-text">Let's Learn Together With Us</p>
+    <p class="cover-text">{!! $data['lessons'][$index++]['content'.session('lang')] !!}</p>
   </div>
   <nav>
     <ul>
@@ -22,58 +22,28 @@
   </nav>
   <section>
     <div class="lessons-cat pt-5">
-      <div class="row m-0 pb-5">
+      @php ($i = 0)
+      @foreach ($data['categories'] as $cat)
+        @if (!($i % 3))
+        <div class="row m-0 pb-5">
+        @endif
         <div class="col-md-4">
           <a href="{{ url('lessons/linux') }}">
             <div class="lesson-content">
               <div class="image">
-                <i class="ficon fab fa-linux"></i>
+                <i class="ficon {{ $cat->icon }}"></i>
               </div>
               <div class="desc">
-                Linux
+                {{ $cat['name'.session('lang')] }}
               </div>
             </div>
           </a>
         </div>
-        <div class="col-md-4">
-          <a href="{{ url('lessons/linux') }}">
-            <div class="lesson-content">
-              <div class="image">
-                <i class="ficon fas fa-sitemap"></i>
-              </div>
-              <div class="desc">
-                Networking
-              </div>
-            </div>
-          </a>
+        @if (!(($i+1) % 3))
         </div>
-        <div class="col-md-4">
-          <a href="{{ url('lessons/linux') }}">
-            <div class="lesson-content">
-              <div class="image">
-                <i class="ficon fas fa-code"></i>
-              </div>
-              <div class="desc">
-                Programming
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="row m-0 pb-5">
-        <div class="col-md-4">
-          <a href="{{ url('lessons/linux') }}">
-            <div class="lesson-content">
-              <div class="image">
-                <i class="ficon fas fa-paint-brush"></i>
-              </div>
-              <div class="desc">
-                Design
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
+        @endif
+        @php ($i++)
+      @endforeach
     </div>
   </section>
 </div>

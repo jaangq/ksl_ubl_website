@@ -8,5 +8,6 @@ class Website_text extends Model
 {
     //
     protected $table = 'website_text';
-    protected $fillable = ['id', 'label', 'label_en', 'content', 'content_en', 'prefix', 'created_at', 'update_at', 'id_pages'];
+    protected $fillable = ['id', 'label', 'label_en', 'content', 'content_en', 'prefix', 'created_at', 'updated_at', 'id_pages'];
+
 }

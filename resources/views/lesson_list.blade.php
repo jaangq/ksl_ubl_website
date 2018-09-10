@@ -27,17 +27,71 @@
       <hr>
       <ul>
         <li><strong>#</strong><hr></li>
+      <?php
+        $sub_arr = []; $sub_i = 0; $sub_flag = false;
+        $sub_sub_arr = []; $sub_sub_i = 0; $sub_sub_flag = false; 
+      ?>
       @foreach (range('A', 'Z') as $char)
         <li id="{{ $char }}"><strong>{{ $char }}</strong>
           <ul>
-            <li><a href="{{ url()->current() }}/dummy_lessons">{{ $char }}orem Ipsum Dolor Sit Amet</a></li>
-            <li><a href="{{ url()->current() }}/dummy_lessons">{{ $char }}orem Ipsum Dolor Sit Amet</a>
-              <ul>
-                <li><a href="{{ url()->current() }}/subcat/dummy_lessons">{{ $char }}orem Ipsum Dolor Sit Amet</a></li>
-                <li><a href="{{ url()->current() }}/subcat/dummy_lessons">{{ $char }}orem Ipsum Dolor Sit Amet</a></li>
-              </ul>
-            </li>
-            <li><a href="{{ url()->current() }}/dummy_lessons">{{ $char }}orem Ipsum Dolor Sit Amet</a></li>
+            @foreach($data['posts'] as $post)
+              @if($post->sub_categories)
+                  @if($char == strtoupper(substr($post->sub_categories->name_en, 0, 1)))
+                    <?php $sub_arr[$sub_i++] =  $post->sub_categories->name_en; ?>
+                    @foreach($sub_arr as $sub_array)
+                      @if($sub_array == $post->sub_categories->name_en && array_count_values($sub_arr)[$post->sub_categories->name_en] > 1)
+                      <?php $sub_flag = true; ?>
+                      @endif
+                    @endforeach
+                    @if(!$sub_flag)
+                    <li><a href="">{{ $post->sub_categories->name_en }}
+                    @endif
+                      @if($post->sub_sub_categories)
+                        @if($post->sub_sub_categories->name_en)
+                        @if(!$sub_flag)
+                        <ul>
+                        @endif
+                          <li><a href="">{{ $post->sub_sub_categories->name_en }}</a>
+                            <ul>
+                              <li><a href="">{{ $post->title_en }}</a></li>
+                            </ul>
+                          </li>
+                        @if(!$sub_flag)
+                        </ul>
+                        @endif
+                        @endif
+                      @else
+                      <ul>
+                        <li><a href="">{{ $post->title_en }}</a></li>
+                      </ul>
+                      @endif
+                    @if(!$sub_flag)
+                    </a></li>
+                    @endif
+                  @endif
+                @elseif($char == strtoupper(substr($post->title_en, 0, 1)))
+                <li><a href="">{{ $post->title_en }}</a></li>
+              @endif
+            @endforeach
+            <!-- @if(count($data['categories'][0]->sub_categories))
+              @foreach($data['categories'][0]->sub_categories as $sub_categories)
+                @if(count($sub_categories->sub_sub_categories))
+
+                @elseif(substr($sub_categories->name, 0, 1) == $char)
+                  <li><a href="">{{ $sub_categories->name }}</a><ul>
+                  @foreach($sub_categories->posts as $posts)
+                    <li><a href="">{{ $posts->title }}</a></li>
+                  @endforeach
+                  </ul></li>
+                @endif
+              @endforeach
+            @elseif(count($data['categories'][0]->posts))
+              @foreach($data['categories'][0]->posts as $posts)
+                @if($char == substr($posts->title, 0, 1))
+                <li><a href="">{{ $posts->title }}</a></li>
+                @endif
+              @endforeach
+            @endif -->
           </ul>
           <hr>
         </li>

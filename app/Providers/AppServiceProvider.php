@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        View::share('index', 0);
         Schema::defaultStringLength(191);
         $registrar = new \App\CustomRoutes\ResourceRegistrar($this->app['router']);
 

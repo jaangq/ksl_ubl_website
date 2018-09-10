@@ -155,7 +155,6 @@ class CategoriesController extends Controller
     {
         //
         $val = $request->input('val');
-
         $data['pages'] = Pages::getAllPages();
         $data['categories'] = Categories::where('id','LIKE','%'.$val.'%')
                           ->orWhere('name','LIKE','%'.$val.'%')
@@ -166,8 +165,12 @@ class CategoriesController extends Controller
                           ->orWhere('updated_at','LIKE','%'.$val.'%')
                           ->orderBy('id', 'DESC')
                           ->paginate(4);
-        $html = View('admin.categories')->with('data', $data)->render();
-        die($html);
+        if($request->has('dataonly')) {
+          return $data['categories'];
+        } else {
+          $html = View('admin.categories')->with('data', $data)->render();
+          die($html);
+        }
 
     }
 }

@@ -1,5 +1,11 @@
-@import '../part/universal';
-@import '../part/universal2';
+@import 'part/universal';
+@import 'part/universal2';
+.posts {
+  img.img-fluid {
+    height: 200px;
+    width: 100%;
+  }
+}
 .nav-posts {
   background-color: #f1f3f5;
   ul {

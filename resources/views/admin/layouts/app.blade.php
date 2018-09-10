@@ -24,10 +24,11 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
+            <div class="container pl-0">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- config('app.name', 'Laravel') --}}
-                    <span class="font-concert-one h2">KSL-UBL</span>
+                    <img src="{{ asset('storage/images/logo_KSL-UBL.png') }}" alt="" class="img img-fluid">
+                    <span class="h4"><strong>KSL-UBL</strong></span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -87,7 +88,7 @@
           </a>
             <ul>
                 @foreach ($pages as $page)
-                  <li><a href="{{ url('ksl/admin/pages/'.strtolower($page->name_en)) }}"><span>{{ $page->name_en }}</span></a></li>
+                  <li><a class="page-{{ strtolower($page->name_en) }}" href="{{ url('ksl/admin/pages/'.strtolower($page->name_en)) }}"><span>{{ $page->name_en }}</span></a></li>
                 @endforeach
             </ul>
           </li>

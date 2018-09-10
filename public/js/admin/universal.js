@@ -306,7 +306,10 @@ function ajaxResult(data = '') {
      $('button.close[data-dismiss="modal"]').click();
      $('.btn-gg').addClass('add-data-btn').removeClass('update-data-btn').text('Add Now');
      $('#formModalLabel').text('Add New '+ ucwords(page));
-     $('.flash-message').html(data);
+     $('.flash-message').html(data).fadeIn();
+     setTimeout(function() {
+       $('.flash-message').fadeOut();
+     }, 1500);
      reloadPage();
 }
 // function reload page
@@ -334,7 +337,7 @@ $(document).ready(function() {
 
 // Anchor
 $(document).on('click', 'section li a', function(e) {
-   if($(this).parents('li').hasClass('has-sub')) {
+   if($(this).parents('li').eq(0).hasClass('has-sub')) {
      $(this).parents('li').find('ul').slideToggle();
      return false;
    }
@@ -371,8 +374,8 @@ $(document).on('click', '.lessmore-btn', function() {
     // let text = $(this).parent().find('.lessmore-ts').text() + $(this).parent().find('.lessmore-t').text();
     if($(this).hasClass('lessmore-more')) {
       $(this).addClass('d-none');
-      $(this).parent().find('.lessmore-t').hide().removeClass('d-none').slideDown();
-      $(this).parent().find('.lessmore-less').removeClass('d-none');
+      $(this).parents('td').find('.lessmore-t').hide().removeClass('d-none').slideDown();
+      $(this).parents('td').find('.lessmore-less').removeClass('d-none');
     } else if($(this).hasClass('lessmore-less')) {
       $(this).addClass('d-none');
       $(this).parent().find('.lessmore-t').slideUp();
@@ -451,4 +454,8 @@ $(document).on('click', 'a[href*="#"]', function(event) {
       }
     // });
 
+});
+
+$(document).on('click', '.page-news', function() {
+  alert('Maaf Fitur Belum Tersedia');
 });

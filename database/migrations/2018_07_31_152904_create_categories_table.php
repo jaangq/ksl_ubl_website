@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->text('desc');
             $table->string('name_en')->nullable();
             $table->text('desc_en')->nullable();
+            $table->string('icon');
             $table->timestamps();
         });
     }

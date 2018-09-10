@@ -1,5 +1,5 @@
-@import '../part/universal';
-@import '../part/universal2';
+@import 'part/universal';
+@import 'part/universal2';
 
 .contact {
   background-color: #efefef;
@@ -35,7 +35,7 @@
         color: #000;
       }
       button {
-        font-weight: 500;        
+        font-weight: 500;
       }
     }
     .right {

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tags extends Model
 {
     //
-    protected $fillable = ['id', 'name', 'desc', 'name_en', 'desc_en', 'created_at', 'update_at'];
+    protected $fillable = ['id', 'name', 'desc', 'name_en', 'desc_en', 'created_at', 'updated_at'];
 
 }

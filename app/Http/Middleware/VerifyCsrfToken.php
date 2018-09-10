@@ -13,5 +13,7 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
+        '/ksl/admin/upload_files/add',
+        '/ksl/admin/upload_files/destroy',
     ];
 }

@@ -1,0 +1,44 @@
+.pages {
+  .card {
+    #el-en {
+      display: none;
+    }
+  }
+  .card-body-table {
+    overflow: hidden;
+  }
+  .lang-div {
+    padding-left: 1rem;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 5px 30px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        cursor: pointer;
+        background-color: rgba(243, 243, 243, 0.5);
+        color: #333;
+      }
+      li:not(.active):hover {
+        background-color: rgb(243, 243, 243);
+        text-decoration: underline;
+      }
+      li.active {
+        background-color: #8a5c86;
+        color: #f3f3f3;
+      }
+    }
+  }
+  label {
+    font-weight: 600;
+    font-size: 1.2em;
+  }
+  input, textarea {
+    color: #333 !important;
+  }
+}

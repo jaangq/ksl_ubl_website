@@ -177,8 +177,12 @@ class SubCategoriesController extends Controller
                               ->orderBy('id', 'DESC')
                               ->paginate(3);
 
-        $html = View('admin.sub_categories')->with('data', $data)->render();
-        die($html);
+        if($request->has('dataonly')) {
+          return $data['sub_categories'];
+        } else {
+          $html = View('admin.sub_categories')->with('data', $data)->render();
+          die($html);
+        }
 
     }
 }

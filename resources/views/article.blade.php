@@ -8,24 +8,18 @@
 <div class="article">
   <div class="cover">
     <div class="cover-bg text-center">
-      <p class="title h2 p-2">{{ ucwords('News Lorem ipsum dolor sit amet') }}</p>
+      <p class="title h2 p-2">{{ $data['posts']['title'.session('lang')] }}</p>
       <div class="img-container p-2">
         <img class="img img-fluid" src="{{ asset('storage/images/dp.jpg') }}" alt="">
-        <span class="px-2"><a class="a-link-white" href="#">Admin KSL</a></span>
+        <span class="px-2"><a class="a-link-white" href="#">{{ $data['posts']->users->name }}</a></span>
       </div>
-      <p class="p-2"><small>Tuesday, August 14, 2018</small></p>
+      <p class="p-2"><small>{{ date("l, F j, Y, g:i A", strtotime($data['posts']->updated_at)) }}</small></p>
     </div>
   </div>
   @if(Request::segment(1) === 'lessons')
   <nav>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li class="chevron"><i class="fas fa-chevron-right"></i></li>
-      <li><a href="{{ url('lessons') }}">Lessons</a></li>
-      <li class="chevron"><i class="fas fa-chevron-right"></i></li>
-      <li><a href="{{ url('lessons/linux') }}">Linux</a></li>
-      <li class="chevron"><i class="fas fa-chevron-right"></i></li>
-      <li><a href="{{ url('lessons/linux#D') }}">Dummy Article</a></li>
+      {!! KSLNavLessons::navlessons(Request::segment(2), Request::segment(3), Request::segment(4), Request::segment(5)) !!}
     </ul>
   </nav>
   @endif
@@ -42,26 +36,41 @@
       <div class="col-md-3"></div>
       <div class="col-md-6">
         <article class="text-justify">
-          <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <!-- <p class="headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
+          {!! $data['posts']['content'.session('lang')] !!}
         </article>
         <div class="next-prev border py-3 m-0 row">
           <div class="col-md-6 text-left">
             <div class="">
               <strong class="">Previous Article</strong>
-              <a class="a-link" href="#">
-                <p class="m-0">Lorem Ipsum Dolor</p>
+              @if(!$data['prev_post']->categories)
+                @php($data['prev_post']->categories = (object) ['name_en' => ''])
+              @endif
+              @if(!$data['prev_post']->sub_categories)
+                @php($data['prev_post']->sub_categories = (object) ['name_en' => ''])
+              @endif
+              @if(!$data['prev_post']->sub_sub_categories)
+                @php($data['prev_post']->sub_sub_categories = (object) ['name_en' => ''])
+              @endif
+              <a class="a-link" href="{{ KSLLinking::linking($data['prev_post']->pages->name_en, $data['prev_post']->categories->name_en, $data['prev_post']->sub_categories->name_en, $data['prev_post']->sub_sub_categories->name_en, $data['prev_post']->title_slug) }}">
+                <p class="m-0">{{ $data['prev_post']->{'title'.session('lang')} }}</p>
               </a>
             </div>
           </div>
           <div class="col-md-6 text-right">
             <div class="">
               <strong class="">Next Article</strong>
-              <a class="a-link" href="#">
-                <p class="m-0">Lorem Ipsum Dolor Sit Amet</p>
+              @if(!$data['next_post']->categories)
+                @php($data['next_post']->categories = (object) ['name_en' => ''])
+              @endif
+              @if(!$data['next_post']->sub_categories)
+                @php($data['next_post']->sub_categories = (object) ['name_en' => ''])
+              @endif
+              @if(!$data['next_post']->sub_sub_categories)
+                @php($data['next_post']->sub_sub_categories = (object) ['name_en' => ''])
+              @endif
+              <a class="a-link" href="{{ KSLLinking::linking($data['next_post']->pages->name_en, $data['next_post']->categories->name_en, $data['next_post']->sub_categories->name_en, $data['next_post']->sub_sub_categories->name_en, $data['next_post']->title_slug) }}">
+                <p class="m-0">{{ $data['next_post']->{'title'.session('lang')} }}</p>
               </a>
             </div>
           </div>
@@ -69,9 +78,9 @@
         <hr>
         <div class="tags text-justify">
           <p class="h3 m-2">Tags</p>
-          @for($i = 0; $i < 10; $i++)
-            <span class="py-1 px-4 m-2"># Tags {{$i+1}}</span>
-          @endfor
+          @foreach($data['tags'] as $tags)
+            <span class="py-1 px-4 m-2"># {{ $tags['name'.session('lang')] }}</span>
+          @endforeach
         </div>
         <div class="end-scroll"></div>
         <hr><br>

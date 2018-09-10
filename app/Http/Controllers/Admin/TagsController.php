@@ -20,7 +20,7 @@ class TagsController extends Controller
     {
         //
         $data['pages'] = Pages::getAllPages();
-        $data['tags'] = Tags::orderBy('id', 'DESC')->paginate(3);
+        $data['tags'] = Tags::orderBy('id', 'DESC')->paginate(10);
         return view('admin.tags')->with('data', $data);
     }
 
@@ -155,19 +155,45 @@ class TagsController extends Controller
     {
         //
         $val = $request->input('val');
-
         $data['pages'] = Pages::getAllPages();
-        $data['tags'] = Tags::where('id','LIKE','%'.$val.'%')
-                          ->orWhere('name','LIKE','%'.$val.'%')
-                          ->orWhere('desc','LIKE','%'.$val.'%')
-                          ->orWhere('name_en','LIKE','%'.$val.'%')
-                          ->orWhere('desc_en','LIKE','%'.$val.'%')
-                          ->orWhere('created_at','LIKE','%'.$val.'%')
-                          ->orWhere('updated_at','LIKE','%'.$val.'%')
-                          ->orderBy('id', 'DESC')
-                          ->paginate(3);
-        $html = View('admin.tags')->with('data', $data)->render();
-        die($html);
+
+        if($request->has('dataonly')) {
+          $opts = [];
+          if ($request->has('optionaldata')) {
+            $opts = json_decode($request->input('optionaldata'));
+          }
+          $data['tags'] = Tags::where(function($where) use ($opts) {
+                              if (!empty($opts)) {
+                                foreach ($opts as $opt) {
+                                  $where->where('name', '!=', $opt);
+                                }
+                              }
+                            })
+                            ->where(function($where) use ($val) {
+                              $where->where('id','LIKE','%'.$val.'%')
+                              ->orWhere('name','LIKE','%'.$val.'%')
+                              ->orWhere('desc','LIKE','%'.$val.'%')
+                              ->orWhere('name_en','LIKE','%'.$val.'%')
+                              ->orWhere('desc_en','LIKE','%'.$val.'%')
+                              ->orWhere('created_at','LIKE','%'.$val.'%')
+                              ->orWhere('updated_at','LIKE','%'.$val.'%');
+                            })
+                            ->orderBy('id', 'DESC')
+                            ->get();
+          return $data['tags'];
+        } else {
+          $data['tags'] = Tags::where('id','LIKE','%'.$val.'%')
+                            ->orWhere('name','LIKE','%'.$val.'%')
+                            ->orWhere('desc','LIKE','%'.$val.'%')
+                            ->orWhere('name_en','LIKE','%'.$val.'%')
+                            ->orWhere('desc_en','LIKE','%'.$val.'%')
+                            ->orWhere('created_at','LIKE','%'.$val.'%')
+                            ->orWhere('updated_at','LIKE','%'.$val.'%')
+                            ->orderBy('id', 'DESC')
+                            ->paginate(10);
+          $html = View('admin.tags')->with('data', $data)->render();
+          die($html);
+        }
 
     }
 }

@@ -10,12 +10,12 @@
 @section('content')
 <div class="contact">
   <div class="cover">
-    Contact Us
+    {!! $data['contact'][3]['content'.session('lang')] !!}
   </div>
   <section class="m-2">
     <div class="row p-5 m-0 border">
       <div class="col-md-6 left">
-        <p class="h2 text-left">Do Not Hesitate To Contact Us, We Are Happy To Receive Messages From You</p>
+        <p class="h2 text-left">{!! $data['contact'][4]['content'.session('lang')] !!}</p>
         <hr>
         <div class="my-4">
           <div class="form-group">
@@ -39,19 +39,19 @@
         </div>
       </div>
       <div class="col-md-6 right">
-        <p class="h2 text-right">And If You Need Something, Just Contact Us Through The Contact Information Below</p>
+        <p class="h2 text-right">{!! $data['contact'][5]['content'.session('lang')] !!}</p>
         <div class="contact-info p-3 mt-4 border">
           <div class="email-info">
-            <p class="m-0">Email</p>
-            <p>admin@ksl-ubl.com</p>
+            <p class="m-0">{!! ucwords($data['contact'][1]['label'.session('lang')]) !!}</p>
+            <p>{!! $data['contact'][1]['content'.session('lang')] !!}</p>
           </div>
           <div class="phone-info">
-            <p class="m-0">Phone Number</p>
-            <p>+6281299922231</p>
+            <p class="m-0">{!! ucwords($data['contact'][0]['label'.session('lang')]) !!}</p>
+            <p>{!! $data['contact'][0]['content'.session('lang')] !!}</p>
           </div>
           <div class="address-info">
-            <p class="m-0">Address</p>
-            <p>Jl. Ciledug Raya, Petukangan Utara, Jakarta Selatan, 12260. DKI Jakarta, Indonesia.</p>
+            <p class="m-0">{!! ucwords($data['contact'][2]['label'.session('lang')]) !!}</p>
+            <p>{!! $data['contact'][2]['content'.session('lang')] !!}</p>
           </div>
         </div>
         <div class="map-cont">

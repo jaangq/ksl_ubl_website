@@ -69,3 +69,36 @@ $(document).on('click', 'a[href*="#"]', function(event) {
     // });
 
 });
+
+// Language
+$(document).on('click', '.lang-li span.nav-link', function(e) {
+  if ($(this).find('ul').css('display') === 'none') {
+    $(this).css('color', '#7bbae7');
+  } else {
+    $(this).attr('style', '');
+  }
+  if (this === e.target) {
+    $(this).find('ul').fadeToggle();
+  }
+});
+$(document).on('click', 'li.lang-choice.nav-link', function(e) {
+    let val = $(this).attr('val');
+    let url = '/lang/'+val;
+    $('.lang-li .fa-check').addClass('invisible');
+    $(this).find('.fa-check').removeClass('invisible');
+    $.ajax({
+     type: 'GET',
+     url: url,
+     success: function(data) {
+       $.ajax({
+        type: 'GET',
+        url: window.location.href,
+        success: function(data) {
+          $('main').hide().html($(data).find('main')).fadeIn(900);
+        },
+        error: function(data){
+        },
+       });
+     }
+    });
+});

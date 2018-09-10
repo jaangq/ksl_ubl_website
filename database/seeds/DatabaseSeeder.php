@@ -64,6 +64,54 @@ class DatabaseSeeder extends Seeder
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
+        DB::table('tags')->insert([
+          'name' => 'Tutorial',
+          'desc' => 'Tutorial',
+          'name_en' => 'Tutorial',
+          'desc_en' => 'Tutorial',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('tags')->insert([
+          'name' => 'SFD',
+          'desc' => 'Software Freedom Day',
+          'name_en' => 'SFD',
+          'desc_en' => 'Software Freedom Day',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('tags')->insert([
+          'name' => 'DFD',
+          'desc' => 'Document Freedom Day',
+          'name_en' => 'DFD',
+          'desc_en' => 'Document Freedom Day',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('tags')->insert([
+          'name' => 'Android',
+          'desc' => 'Android',
+          'name_en' => 'Android',
+          'desc_en' => 'Android',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('tags')->insert([
+          'name' => 'Python',
+          'desc' => 'Python',
+          'name_en' => 'Python',
+          'desc_en' => 'Python',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('tags')->insert([
+          'name' => 'imagemagick',
+          'desc' => 'imagemagick',
+          'name_en' => 'imagemagick',
+          'desc_en' => 'imagemagick',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
 
         // seeding categories table
         DB::table('categories')->insert([
@@ -72,33 +120,37 @@ class DatabaseSeeder extends Seeder
           'desc' => 'Linux adalah keluarga dari sistem operasi perangkat lunak bebas dan sumber terbuka yang dibangun di sekitar kernel Linux.',
           'name_en' => 'Linux',
           'desc_en' => 'Linux is a family of free and open-source software operating systems built around the Linux kernel.',
+          'icon' => 'fab fa-linux',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('categories')->insert([
           'id' => '2',
-          'name' => 'Pemrograman',
-          'desc' => 'Pemrograman adalah proses membuat serangkaian instruksi yang memberi tahu komputer cara melakukan suatu tugas.',
-          'name_en' => 'Programming',
-          'desc_en' => 'Programming is the process of creating a set of instructions that tell a computer how to perform a task.',
+          'name' => 'Jaringan Komputer',
+          'desc' => 'Networking, juga dikenal sebagai jaringan komputer, adalah praktik pengangkutan dan pertukaran data antara node melalui media bersama dalam suatu sistem informasi.',
+          'name_en' => 'Networking',
+          'desc_en' => 'Networking, also known as computer networking, is the practice of transporting and exchanging data between nodes over a shared medium in an information system.',
+          'icon' => 'fas fa-sitemap',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('categories')->insert([
           'id' => '3',
-          'name' => 'Jaringan Komputer (Networking)',
-          'desc' => 'Networking, juga dikenal sebagai jaringan komputer, adalah praktik pengangkutan dan pertukaran data antara node melalui media bersama dalam suatu sistem informasi.',
-          'name_en' => 'Networking',
-          'desc_en' => 'Networking, also known as computer networking, is the practice of transporting and exchanging data between nodes over a shared medium in an information system.',
+          'name' => 'Desain',
+          'desc' => 'Desain adalah pembuatan rencana atau konvensi untuk pembangunan objek, sistem atau interaksi manusia yang dapat diukur (seperti dalam cetak biru arsitektur, gambar teknik, proses bisnis, diagram sirkuit, dan pola jahit). Desain memiliki konotasi yang berbeda di berbagai bidang (lihat disiplin desain di bawah). Dalam beberapa kasus, konstruksi langsung suatu objek (seperti dalam gerabah, teknik, manajemen, pengkodean, dan desain grafis) juga dianggap menggunakan pemikiran desain.',
+          'name_en' => 'Design',
+          'desc_en' => 'Design is the creation of a plan or convention for the construction of an object, system or measurable human interaction (as in architectural blueprints, engineering drawings, business processes, circuit diagrams, and sewing patterns). Design has different connotations in different fields (see design disciplines below). In some cases, the direct construction of an object (as in pottery, engineering, management, coding, and graphic design) is also considered to use design thinking. ',
+          'icon' => 'fas fa-paint-brush',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('categories')->insert([
           'id' => '4',
-          'name' => 'Desain',
-          'desc' => 'Desain adalah pembuatan rencana atau konvensi untuk pembangunan objek, sistem atau interaksi manusia yang dapat diukur (seperti dalam cetak biru arsitektur, gambar teknik, proses bisnis, diagram sirkuit, dan pola jahit). Desain memiliki konotasi yang berbeda di berbagai bidang (lihat disiplin desain di bawah). Dalam beberapa kasus, konstruksi langsung suatu objek (seperti dalam gerabah, teknik, manajemen, pengkodean, dan desain grafis) juga dianggap menggunakan pemikiran desain.',
-          'name_en' => 'Design',
-          'desc_en' => 'Design is the creation of a plan or convention for the construction of an object, system or measurable human interaction (as in architectural blueprints, engineering drawings, business processes, circuit diagrams, and sewing patterns). Design has different connotations in different fields (see design disciplines below). In some cases, the direct construction of an object (as in pottery, engineering, management, coding, and graphic design) is also considered to use design thinking. ',
+          'name' => 'Pemrograman',
+          'desc' => 'Pemrograman adalah proses membuat serangkaian instruksi yang memberi tahu komputer cara melakukan suatu tugas.',
+          'name_en' => 'Programming',
+          'desc_en' => 'Programming is the process of creating a set of instructions that tell a computer how to perform a task.',
+          'icon' => 'fas fa-code',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -142,7 +194,7 @@ class DatabaseSeeder extends Seeder
           'desc_en' => 'Laravel is a free, open-source PHP web framework, created by Taylor Otwell and intended for the development of web applications following the model–view–controller architectural pattern and based on Symfony.',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s'),
-          'id_categories' => '2'
+          'id_categories' => '4'
         ]);
         DB::table('sub_categories')->insert([
           'id' => '5',
@@ -152,9 +204,19 @@ class DatabaseSeeder extends Seeder
           'desc_en' => 'Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside the browser.',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s'),
-          'id_categories' => '2'
+          'id_categories' => '4'
         ]);
 
+        DB::table('sub_categories')->insert([
+          'id' => '6',
+          'name' => 'Python',
+          'desc' => 'Python adalah bahasa pemrograman interpretatif multiguna dengan filosofi perancangan yang berfokus pada tingkat keterbacaan kode.',
+          'name_en' => 'Python',
+          'desc_en' => 'Python is a multipurpose interpretive programming language with a design philosophy that focuses on the level of code readability.',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s'),
+          'id_categories' => '4'
+        ]);
         // seeding sub_sub_categories table
         DB::table('sub_sub_categories')->insert([
           'id' => '1',
@@ -186,6 +248,7 @@ class DatabaseSeeder extends Seeder
           'updated_at' => date('Y-m-d H:i:s'),
           'id_sub_categories' => '4'
         ]);
+
 
         // seeding pages table
         DB::table('pages')->insert([
@@ -223,7 +286,13 @@ class DatabaseSeeder extends Seeder
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
-
+        DB::table('pages')->insert([
+          'id' => '6',
+          'name' => 'Posts',
+          'name_en' => 'Posts',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
         // seeding post_status table
         DB::table('post_status')->insert([
           'id' => '1',
@@ -260,28 +329,33 @@ class DatabaseSeeder extends Seeder
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
+        // seeding posts table
+        // seeding tag_posts table
 
-        // seeding file_types table
-        DB::table('file_types')->insert([
-          'id' => '1',
-          'name' => 'gambar',
-          'name_en' => 'image',
-          'file_formats' => 'jpg'
-        ]);
 
-        DB::table('file_types')->insert([
-          'id' => '2',
-          'name' => 'gambar',
-          'name_en' => 'image',
-          'file_formats' => 'png'
-        ]);
 
-        DB::table('file_types')->insert([
-          'id' => '3',
-          'name' => 'video',
-          'name_en' => 'video',
-          'file_formats' => 'mp4'
-        ]);
+
+        // // seeding file_types table
+        // DB::table('file_types')->insert([
+        //   'id' => '1',
+        //   'name' => 'gambar',
+        //   'name_en' => 'image',
+        //   'file_formats' => 'jpg'
+        // ]);
+        //
+        // DB::table('file_types')->insert([
+        //   'id' => '2',
+        //   'name' => 'gambar',
+        //   'name_en' => 'image',
+        //   'file_formats' => 'png'
+        // ]);
+        //
+        // DB::table('file_types')->insert([
+        //   'id' => '3',
+        //   'name' => 'video',
+        //   'name_en' => 'video',
+        //   'file_formats' => 'mp4'
+        // ]);
 
         // seeding website_text
         DB::table('website_text')->insert([
@@ -375,25 +449,21 @@ class DatabaseSeeder extends Seeder
 
         DB::table('website_text')->insert([
           'id' => '9',
-          'label' => 'home quotes',
-          'label_en' => 'home quotes',
+          'label' => 'Home Quotes',
+          'label_en' => 'Home Quotes',
           'content' => '<p>The Linux philosophy is \'<strong>Laugh in the face of danger</strong>\'. <strong>Oops. Wrong One.</strong> \'<strong>Do it yourself</strong>\'. <strong>Yes, that\'s it.</strong></p><cite>Linux Torvalds</cite>',
           'content_en' => '<p>The Linux philosophy is \'<strong>Laugh in the face of danger</strong>\'. <strong>Oops. Wrong One.</strong> \'<strong>Do it yourself</strong>\'. <strong>Yes, that\'s it.</strong></p><cite>Linux Torvalds</cite>',
-          'prefix' => '',
+          'prefix' => 'editable',
           'id_pages' => '1',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('website_text')->insert([
           'id' => '10',
-          'label' => 'what is and what we do on ksl',
-          'label_en' => 'what is and what we do on ksl',
-          'content' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, if you want to learn more about us just click on <a class="about-page-link" href="http://127.0.0.1:8000/about">About Page</a> .</p>',
-          'content_en' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, if you want to learn more about us just click on <a class="about-page-link" href="http://127.0.0.1:8000/about">About Page</a> .</p>',
+          'label' => 'Apa Itu KSL dan Apa Yang Kami Lakukan di KSL',
+          'label_en' => 'What Is And What We Do On KSL',
+          'content' => 'Apa Itu KSL dan Apa Yang Kami Lakukan di KSL',
+          'content_en' => 'What Is And What We Do On KSL',
           'prefix' => '',
           'id_pages' => '1',
           'created_at' => date('Y-m-d H:i:s'),
@@ -401,9 +471,24 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('website_text')->insert([
           'id' => '11',
-          'label' => 'Besides Linux We Also Learn',
+          'label' => 'Text For What Is And What We Do On KSL',
+          'label_en' => 'Teks Untuk What Is And What We Do On KSL',
+          'content' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, if you want to learn more about us just click on <a class="about-page-link" href="http://127.0.0.1:8000/about">About Page</a> .</p>',
+          'content_en' => '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, if you want to learn more about us just click on <a class="about-page-link" href="http://127.0.0.1:8000/about">About Page</a> .</p>',
+          'prefix' => 'editable',
+          'id_pages' => '1',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '12',
+          'label' => 'Selain Linux Kami Juga Belajar',
           'label_en' => 'Besides Linux We Also Learn',
-          'content' => 'Besides Linux We Also Learn',
+          'content' => 'Selain Linux Kami Juga Belajar',
           'content_en' => 'Besides Linux We Also Learn',
           'prefix' => '',
           'id_pages' => '1',
@@ -411,10 +496,10 @@ class DatabaseSeeder extends Seeder
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('website_text')->insert([
-          'id' => '12',
-          'label' => 'Be Our Family and Learn With Us',
+          'id' => '13',
+          'label' => 'Jadilah Keluarga Kami dan Belajar Bersama Kami',
           'label_en' => 'Be Our Family and Learn With Us',
-          'content' => 'Be Our Family and Learn With Us',
+          'content' => 'Jadilah Keluarga Kami dan Belajar Bersama Kami',
           'content_en' => 'Be Our Family and Learn With Us',
           'prefix' => '',
           'id_pages' => '1',
@@ -422,28 +507,427 @@ class DatabaseSeeder extends Seeder
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('website_text')->insert([
-          'id' => '13',
+          'id' => '14',
           'label' => 'Text For Be Our Family and Learn With Us',
-          'label_en' => 'Text For Be Our Family and Learn With Us',
+          'label_en' => 'Teks Untuk Be Our Family and Learn With Us',
           'content' => '<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>',
           'content_en' => '<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>',
-          'prefix' => '',
+          'prefix' => 'editable',
           'id_pages' => '1',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('website_text')->insert([
-          'id' => '14',
-          'label' => 'Let\'s See the Latest News From Us',
+          'id' => '15',
+          'label' => 'Ayo Lihat Berita Terbaru Kami',
           'label_en' => 'Let\'s See the Latest News From Us',
-          'content' => 'Let\'s See the Latest News From Us',
+          'content' => 'Ayo Lihat Berita Terbaru Kami',
           'content_en' => 'Let\'s See the Latest News From Us',
           'prefix' => '',
           'id_pages' => '1',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
+        DB::table('website_text')->insert([
+          'id' => '16',
+          'label' => 'Paling Terbaru',
+          'label_en' => 'Most Recent',
+          'content' => 'Paling Terbaru',
+          'content_en' => 'Most Recent',
+          'prefix' => '',
+          'id_pages' => '6',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '17',
+          'label' => 'Hanya Berita',
+          'label_en' => 'News Only',
+          'content' => 'Hanya Berita',
+          'content_en' => 'News Only',
+          'prefix' => '',
+          'id_pages' => '6',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '18',
+          'label' => 'Pelajaran Saja',
+          'label_en' => 'Lessons Only',
+          'content' => 'Pelajaran Saja',
+          'content_en' => 'Lessons Only',
+          'prefix' => '',
+          'id_pages' => '6',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '19',
+          'label' => 'Populer',
+          'label_en' => 'Popular',
+          'content' => 'Populer',
+          'content_en' => 'Popular',
+          'prefix' => '',
+          'id_pages' => '6',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '20',
+          'label' => 'Paling Banyak Dilihat',
+          'label_en' => 'Most Viewed',
+          'content' => 'Paling Banyak Dilihat',
+          'content_en' => 'Most Viewed',
+          'prefix' => '',
+          'id_pages' => '6',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '21',
+          'label' => 'Text Input Cari Postingan',
+          'label_en' => 'Search Posts Text Input',
+          'content' => 'Cari Postingan',
+          'content_en' => 'Search Posts',
+          'prefix' => '',
+          'id_pages' => '6',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '22',
+          'label' => 'Ayo Belajar Bersama Dengan Kami',
+          'label_en' => 'Let\'s Learn Together With Us',
+          'content' => 'Ayo Belajar Bersama Dengan Kami',
+          'content_en' => 'Let\'s Learn Together With Us',
+          'prefix' => '',
+          'id_pages' => '3',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '23',
+          'label' => 'Apa itu KSL',
+          'label_en' => 'What is KSL',
+          'content' => 'Apa itu KSL',
+          'content_en' => 'What is KSL',
+          'prefix' => '',
+          'id_pages' => '4',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '24',
+          'label' => 'Teks Untuk Apa itu KSL',
+          'label_en' => 'Text For What is KSL',
+          'content' => '<div class="p-5">
+                          <img src="http://127.0.0.1:8000/storage/dummy_images/what_is_ksl.png" alt="" class="img img-fluid">
+                        </div>
+                        <p class="text-justify">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <p class="text-justify">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p><br><br>',
+          'content_en' => '<div class="p-5">
+                              <img src="http://127.0.0.1:8000/storage/dummy_images/what_is_ksl.png" alt="" class="img img-fluid">
+                            </div>
+                            <p class="text-justify">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                            <p class="text-justify">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p><br><br>',
+          'prefix' => 'editable',
+          'id_pages' => '4',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '25',
+          'label' => 'Apa yang Kami Lakukan di KSL',
+          'label_en' => 'What Do We Do on KSL ?',
+          'content' => 'Apa yang Kami Lakukan di KSL',
+          'content_en' => 'What Do We Do on KSL ?',
+          'prefix' => '',
+          'id_pages' => '4',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '26',
+          'label' => 'Teks Untuk Apa yang Kami Lakukan di KSL',
+          'label_en' => 'Text For What Do We Do on KSL ?',
+          'content' => '<div class="px-5 pb-5 pt-3">
+                          <img class="img img-fluid" src="http://127.0.0.1:8000/storage/dummy_images/people-coffee-notes-tea.jpg" alt="">
+                        </div>
+                        <p class="text-justify">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <p class="text-justify">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p><br><br>',
+          'content_en' => '<div class="px-5 pb-5 pt-3">
+                            <img class="img img-fluid" src="http://127.0.0.1:8000/storage/dummy_images/people-coffee-notes-tea.jpg" alt="">
+                          </div>
+                          <p class="text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+                          <p class="text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p><br><br>',
+          'prefix' => 'editable',
+          'id_pages' => '4',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '27',
+          'label' => 'Tim Kami (Struktur Organisasi Kami)',
+          'label_en' => 'Our Team (Our Organizational Structure)',
+          'content' => 'Tim Kami (Struktur Organisasi Kami)',
+          'content_en' => 'Our Team (Our Organizational Structure)',
+          'prefix' => '',
+          'id_pages' => '4',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '28',
+          'label' => 'Teks Untuk Apa yang Kami Lakukan di KSL (Struktur Organisasi Kami)',
+          'label_en' => 'Text For Our Team (Our Organizational Structure)',
+          'content' => '<div class="p-5">
+                          <img src="http://127.0.0.1:8000/storage/dummy_images/fam.png" alt="" class="img img-fluid border">
+                        </div>
+                        <p class="text-justify">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <p class="text-justify">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p><br><br>',
+          'content_en' => '<div class="p-5">
+                            <img src="http://127.0.0.1:8000/storage/dummy_images/fam.png" alt="" class="img img-fluid border">
+                          </div>
+                          <p class="text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+                          <p class="text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p><br><br>',
+          'prefix' => 'editable',
+          'id_pages' => '4',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '29',
+          'label' => 'Partner Kami',
+          'label_en' => 'Our Partners',
+          'content' => 'Partner Kami',
+          'content_en' => 'Our Partners',
+          'prefix' => '',
+          'id_pages' => '4',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '30',
+          'label' => 'Teks Untuk Partner Kami',
+          'label_en' => 'Text For Our Partners ',
+          'content' => '<p class="text-justify">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <div class="p-5">
+                          <img src="http://127.0.0.1:8000/storage/dummy_images/logos-about.png" alt="" class="img img-fluid">
+                        </div>',
+          'content_en' => '<p class="text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+                          <div class="p-5">
+                            <img src="http://127.0.0.1:8000/storage/dummy_images/logos-about.png" alt="" class="img img-fluid">
+                          </div>',
+          'prefix' => 'editable',
+          'id_pages' => '4',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '31',
+          'label' => 'Kontak Kami',
+          'label_en' => 'Contact Us',
+          'content' => 'Kontak Kami',
+          'content_en' => 'Contact Us',
+          'prefix' => '',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '32',
+          'label' => 'Judul Form Kontak',
+          'label_en' => 'Contact Form Title',
+          'content' => 'Jangan Ragu Tuk Menghubungi Kami, Kami Sangat Senang Menerima Pesan Darimu',
+          'content_en' => 'Do Not Hesitate To Contact Us, We Are Happy To Receive Messages From You',
+          'prefix' => '',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('website_text')->insert([
+          'id' => '33',
+          'label' => 'Judul Informasi Kontak',
+          'label_en' => 'Contact Information Title',
+          'content' => 'Dan Jika Kamu Butuh Sesuatu, Hubungi Saja Kami Melalui Informasi Kontak Di Bawah Ini',
+          'content_en' => 'And If You Need Something, Just Contact Us Through The Contact Information Below',
+          'prefix' => '',
+          'id_pages' => '5',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        // seeding uploaded_files
+        DB::table('uploaded_files')->insert( [
+        'id'=>1,
+        'name'=>'inkscape.png',
+        'mime'=>'image/png',
+        'size'=>45561,
+        'hash'=>'l1_aW1hZ2VzL2lua3NjYXBlLnBuZw',
+        'created_at'=>'2018-09-07 08:07:16',
+        'updated_at'=>'2018-09-07 08:07:16',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>2,
+        'name'=>'Picture1.png',
+        'mime'=>'image/png',
+        'size'=>69816,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmUxLnBuZw',
+        'created_at'=>'2018-09-07 08:09:10',
+        'updated_at'=>'2018-09-07 08:09:10',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>3,
+        'name'=>'Picture3.png',
+        'mime'=>'image/png',
+        'size'=>91450,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmUzLnBuZw',
+        'created_at'=>'2018-09-07 08:10:02',
+        'updated_at'=>'2018-09-07 08:10:02',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>4,
+        'name'=>'Picture2.png',
+        'mime'=>'image/png',
+        'size'=>69715,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmUyLnBuZw',
+        'created_at'=>'2018-09-07 08:10:11',
+        'updated_at'=>'2018-09-07 08:10:11',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>5,
+        'name'=>'Picture4.png',
+        'mime'=>'image/png',
+        'size'=>174137,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmU0LnBuZw',
+        'created_at'=>'2018-09-07 08:11:52',
+        'updated_at'=>'2018-09-07 08:11:52',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>6,
+        'name'=>'Picture5.png',
+        'mime'=>'image/png',
+        'size'=>174999,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmU1LnBuZw',
+        'created_at'=>'2018-09-07 08:12:34',
+        'updated_at'=>'2018-09-07 08:12:34',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>7,
+        'name'=>'Picture6.png',
+        'mime'=>'image/png',
+        'size'=>245100,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmU2LnBuZw',
+        'created_at'=>'2018-09-07 08:14:16',
+        'updated_at'=>'2018-09-07 08:14:16',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>8,
+        'name'=>'Picture7.png',
+        'mime'=>'image/png',
+        'size'=>216402,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmU3LnBuZw',
+        'created_at'=>'2018-09-07 08:14:56',
+        'updated_at'=>'2018-09-07 08:14:56',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>9,
+        'name'=>'Picture8.png',
+        'mime'=>'image/png',
+        'size'=>249649,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmU4LnBuZw',
+        'created_at'=>'2018-09-07 08:17:02',
+        'updated_at'=>'2018-09-07 08:17:02',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>10,
+        'name'=>'Picture9.png',
+        'mime'=>'image/png',
+        'size'=>135830,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmU5LnBuZw',
+        'created_at'=>'2018-09-07 08:17:37',
+        'updated_at'=>'2018-09-07 08:17:37',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>11,
+        'name'=>'Picture10.png',
+        'mime'=>'image/png',
+        'size'=>102052,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmUxMC5wbmc',
+        'created_at'=>'2018-09-07 08:18:18',
+        'updated_at'=>'2018-09-07 08:18:18',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>12,
+        'name'=>'Picture11.png',
+        'mime'=>'image/png',
+        'size'=>181863,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmUxMS5wbmc',
+        'created_at'=>'2018-09-07 08:18:56',
+        'updated_at'=>'2018-09-07 08:18:56',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>13,
+        'name'=>'Picture12.png',
+        'mime'=>'image/png',
+        'size'=>167439,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmUxMi5wbmc',
+        'created_at'=>'2018-09-07 08:19:39',
+        'updated_at'=>'2018-09-07 08:19:39',
+        'id_users'=>1
+        ] );
+        DB::table('uploaded_files')->insert( [
+        'id'=>14,
+        'name'=>'Picture13.png',
+        'mime'=>'image/png',
+        'size'=>162282,
+        'hash'=>'l1_aW1hZ2VzL1BpY3R1cmUxMy5wbmc',
+        'created_at'=>'2018-09-07 08:20:14',
+        'updated_at'=>'2018-09-07 08:20:14',
+        'id_users'=>1
+        ] );
+
     }
 }

@@ -59,6 +59,21 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url('contact') }}">Contact</a>
             </li>
+            <li class="nav-item lang-li">
+              <span class="nav-link lang position-relative">
+                <i class="fas fa-language "></i> Change Language
+                <ul class="position-absolute">
+                  <li class="lang-choice nav-link" val="in"><i class="fas fa-check @if(session('lang')) invisible @endif"></i> <strong>Indonesia</strong></li>
+                  <li class="lang-choice nav-link" val="en"><i class="fas fa-check @if(!session('lang')) invisible @endif"></i> <strong>English</strong></li>
+                </ul>
+              </span>
+              <!-- <label class="cwhite" for="lang">Pilih Bahasa</label> -->
+              <!-- <select id="lang" class="form-control">
+                <option value="">Pilih Bahasa</option>
+                <option value="in">Indonesia</option>
+                <option value="en">English</option>
+              </select> -->
+            </li>
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown

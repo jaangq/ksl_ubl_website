@@ -20,12 +20,11 @@ class PagesController extends Controller
     {
         //
         $data['pages'] = Pages::getAllPages();
-        $data['prefix'] = Website_text::where('id_pages', 5)->distinct('prefix')->select('prefix')->get();
-        $data['contact'] = Website_text::where('id_pages', 5)->where('prefix', 'contact')->get();
-        $data['address'] = Website_text::where('id_pages', 5)->where('prefix', 'address')->get();
-        $data['sosmed'] = Website_text::where('id_pages', 5)->where('prefix', 'sosmed')->get();
-        return view('admin.pages')->with('data', $data);
-        // die('hello '.$page);
+        $data['page'] = $page;
+        $data['home'] = Pages::where('pages.name_en', $page)->get()[0];
+        if ($data['home']->website_text[0]) {
+          return view('admin.pages')->with('data', $data);
+        }
     }
 
     /**
@@ -81,6 +80,16 @@ class PagesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $jsData = json_decode($request->input('jsData'));
+        foreach ($jsData as $web_text) {
+          $website_text = Website_text::find($web_text[0]);
+          $website_text[$web_text[1]] = $web_text[3];
+          $website_text->save();
+        }
+        $text = ucfirst('Text Website has been updated');
+        $type = 'success';
+        $strongText = 'Successfully !';
+        return KSLAlert::makesAlert($text, $type, $strongText);
     }
 
     /**

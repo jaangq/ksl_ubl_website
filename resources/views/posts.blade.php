@@ -5,55 +5,62 @@
 @endsection
 
 @section('content')
-<div class="contaier posts pt-4">
+
+<section class="contaier posts pt-4">
   <nav class="nav-posts pt-2 position-relative">
     <ul class="d-inline-block">
-      <li class="active"><a href="#">Most Recent</a></li>
-      <li><a href="#">News Only</a></li>
-      <li><a href="#">Lessons Only</a></li>
-      <li><a href="#">Popular</a></li>
-      <li><a href="#">Most Viewed</a></li>
+      <li class="@if(url()->current() == url('posts')) active @endif"><a href="{{ url('posts') }}">{!! $data['pages'][$index++]['content'.session('lang')] !!}</a></li>
+      <li class="@if(url()->current() == url('posts/news-only')) active @endif"><a href="{{ url('posts/news-only') }}">{!! $data['pages'][$index++]['content'.session('lang')] !!}</a></li>
+      <li class="@if(url()->current() == url('posts/lessons-only')) active @endif"><a href="{{ url('posts/lessons-only') }}">{!! $data['pages'][$index++]['content'.session('lang')] !!}</a></li>
+      <li class="@if(url()->current() == url('posts/popular')) active @endif"><a href="{{ url('posts/popular') }}">{!! $data['pages'][$index++]['content'.session('lang')] !!}</a></li>
+      <li class="@if(url()->current() == url('posts/most-viewed')) active @endif"><a href="{{ url('posts/most-viewed') }}">{!! $data['pages'][$index++]['content'.session('lang')] !!}</a></li>
     </ul>
     <div class="search-posts d-inline-block position-absolute">
-      <input class="form-control d-inline-block" type="text" name="" placeholder="Search posts"><button class="btn btn-primary" type="button" name="button"><i class="fas fa-search"></i></button>
+      <form class="" action="{{ url('posts') }}" method="post">
+         {{ csrf_field() }}
+        <input type="hidden" name="post_sub" value="{{ $data['post_sub'] }}">
+        <input class="form-control d-inline-block" type="text" name="search" placeholder="Search posts"><button class="btn btn-primary" type="submit" name="button"><i class="fas fa-search"></i></button>
+      </form>
     </div>
   </nav>
   <div class="container mt-5">
-    <?php $iter = 0; ?>
-    @for($j = 0; $j < 2; $j++)
-    <div class="row">
-      @for($i = 0; $i < 3; $i++)
+    @php($iter = 0)
+    @foreach($data['posts'] as $post)
+
+      @if(preg_match('/<img.+src="([^"]+)[^>]+>/', $post->content_en, $matches))
+      @endif
+
+      @if(!$post->categories)
+        @php($post->categories = (object) ['name_en' => ''])
+      @endif
+      @if(!$post->sub_categories)
+        @php($post->sub_categories = (object) ['name_en' => ''])
+      @endif
+      @if(!$post->sub_sub_categories)
+        @php($post->sub_sub_categories = (object) ['name_en' => ''])
+      @endif
+
+      @if(!($iter % 3))
+      <div class="row">
+      @endif
         <div class="col-md-4 px-4 py-3 posts-box cursor-pointer">
-          <img class="img-fluid" src="{{ asset('storage/dummy_images/dummy'.$iter.'.jpg') }}" alt="">
+          <img class="img img-fluid" src="@if($matches) {{ $matches[1] }} @else {{ asset('storage/images/default_article_cover.jpg') }} @endif" alt="">
           <div class="">
-            <p class="h4 my-4">posts {{$iter++}}</p>
-            <p class="datetime">Tuesday, August 14, 2018</p>
-            <p class="article text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> <a href="{{ url('news/dummy_news') }}">Read More</a>
+            <p class="h4 my-4">{{ $post['title'.session('lang')] }}</p>
+            <p class="datetime">{{ date("l, F j, Y, g:i A", strtotime($post->updated_at)) }}</p>
+            <p class="article text-justify">{{ substr(strip_tags(html_entity_decode(str_replace('&nbsp;', '', $post['content'.session('lang')]))), 0, 100) }}...</p> <a href="{{ KSLLinking::linking($data['posts'][$iter]->pages->name_en, $data['posts'][$iter]->categories->name_en, $data['posts'][$iter]->sub_categories->name_en, $data['posts'][$iter]->sub_sub_categories->name_en, $data['posts'][$iter]->title_slug) }}">Read More</a>
           </div>
         </div>
-      @endfor
-    </div>
-    @endfor
-    <?php $iter = 0; ?>
-    @for($j = 0; $j < 2; $j++)
-    <div class="row">
-      @for($i = 0; $i < 3; $i++)
-        <div class="col-md-4 px-4 py-3 posts-box cursor-pointer">
-          <img class="img-fluid" src="{{ asset('storage/dummy_images/dummy'.$iter.'.jpg') }}" alt="">
-          <div class="">
-            <p class="h4 my-4">posts {{$iter++}}</p>
-            <p class="datetime">Tuesday, August 14, 2018</p>
-            <p class="article text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> <a href="{{ url('news/dummy_news') }}">Read More</a>
-          </div>
-        </div>
-      @endfor
-    </div>
-    @endfor
+      @if(!(($iter+1) % 3))
+      </div>
+      @endif
+      @php($iter++)
+    @endforeach
   </div>
   <div class="m-5 p-5 text-center">
-    <div class="d-inline-block">{{ $paginatenya->links() }}</div>
+    <div class="d-inline-block">{{ $data['posts']->links() }}</div>
   </div>
 
-</div>
+</section>
 <!-- <script src="{{ asset('js/pages/posts.js') }}" charset="utf-8" defer></script> -->
 @endsection

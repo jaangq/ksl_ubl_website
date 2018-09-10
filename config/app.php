@@ -217,6 +217,8 @@ return [
         // created manual
         'KSLAlert' => App\Helpers\KSL\Alerts::class,
         'KSLLessMore' => App\Helpers\KSL\LessMore::class,
+        'KSLLinking' => App\Helpers\KSL\Linking::class,
+        'KSLNavLessons' => App\Helpers\KSL\NavLessons::class,
     ],
 
 ];
