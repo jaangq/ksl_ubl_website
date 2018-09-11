@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\AdminModel\Posts;
 use App\AdminModel\Tags;
+use App\AdminModel\Website_text;
 
 class LessonsController extends Controller
 {
@@ -65,7 +66,9 @@ class LessonsController extends Controller
         } else {
           $data['prev_post'] = (object) ['categories' => '', 'sub_categories' => '', 'sub_sub_categories' => '', 'pages' => (object) ['name_en' => ''], 'title_slug' => '', 'title_en' => '', 'title' => ''];
         }
-        // SELECT * FROM `posts` WHERE updated_at > (SELECT  updated_at FROM posts WHERE id = 3) ORDER BY updated_at DESC LIMIT 1
+
+        //
+        $data['sosmed'] = Website_text::where('prefix', 'sosmed')->get();
         return view('article')->with('data', $data);
     }
 }

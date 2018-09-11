@@ -20,7 +20,7 @@ Route::get('/lang/en', function () {
 Route::get('/', function () {
     $data['home'] = App\AdminModel\Pages::where('name_en', 'home')->get()[0]->website_text;
     $data['categories'] = App\AdminModel\Categories::all();
-    $data['posts'] = App\AdminModel\Posts::orderBy('created_at', 'DESC')->limit(6)->get();
+    $data['posts'] = App\AdminModel\Posts::where('id_post_status', '1')->orderBy('created_at', 'DESC')->limit(6)->get();
     return view('home')->with('data', $data);
 });
 Route::get('/posts', 'PostsController@index');
@@ -28,6 +28,7 @@ Route::get('/posts/news-only', 'PostsController@newsOnly');
 Route::get('/posts/lessons-only', 'PostsController@lessonsOnly');
 Route::get('/posts/popular', 'PostsController@popular');
 Route::get('/posts/most-viewed', 'PostsController@mostViewed');
+Route::get('/posts/tags/{search?}', 'PostsController@tags');
 Route::post('/posts/{search?}', 'PostsController@search');
 
 Route::get('/news/{post}', 'NewsController@index');

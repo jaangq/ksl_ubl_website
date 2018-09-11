@@ -550,6 +550,23 @@ body footer {
   background-color: #ececec;
 }
 
+.lesson-list .content a {
+  color: #333;
+  text-decoration: none;
+  cursor: default;
+}
+.lesson-list .content a:hover {
+  color: #333;
+}
+.lesson-list .content .less-list-title-post {
+  color: red;
+  text-decoration: none;
+  color: #0056b3;
+  cursor: pointer;
+}
+.lesson-list .content .less-list-title-post:hover {
+  text-decoration: underline;
+}
 .lesson-list nav ul li:hover:not(.chevron), .lesson-list nav .subcat nav ul li:hover:not(.chevron) {
   background-color: unset;
 }

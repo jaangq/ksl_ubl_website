@@ -108,6 +108,28 @@
                        <textarea id="posts-content-en" class="form-control" rows="8" cols="80"></textarea>
                    </div>
                    <div class="form-group">
+                     <label for="posts-tags">Tags</label>
+                     <div id="posts-tags-result-selected">
+
+                     </div>
+                     <div id="posts-tags-result-selected-hid" class="d-none">
+
+                     </div>
+                     <input id="posts-tags" class="form-control" type="text">
+                     <div id="posts-tags-result"></div>
+                   </div>
+                   <div class="form-group">
+                     <input type="hidden" class="form-control" id="posts-id" name="posts-id">
+                     <input type="hidden" class="form-control" id="posts-status" val="">
+                   </div>
+                   <div class="form-group">
+                     <label for="posts-pages">Posting Untuk</label>
+                     <select id="posts-pages" class="form-control">
+                       <option value="2">News</option>
+                       <option value="3">Lessons</option>
+                     </select>
+                   </div>
+                   <div class="form-group sel-cat">
                          <div class="row">
                            <div class="col-md-4">
                              <div class="position-relative">
@@ -131,28 +153,6 @@
                              </div>
                            </div>
                          </div>
-                   </div>
-                   <div class="form-group">
-                     <label for="posts-tags">Tags</label>
-                     <div id="posts-tags-result-selected">
-
-                     </div>
-                     <div id="posts-tags-result-selected-hid" class="d-none">
-
-                     </div>
-                     <input id="posts-tags" class="form-control" type="text">
-                     <div id="posts-tags-result"></div>
-                   </div>
-                   <div class="form-group">
-                     <input type="hidden" class="form-control" id="posts-id" name="posts-id">
-                     <input type="hidden" class="form-control" id="posts-status" val="">
-                   </div>
-                   <div class="form-group">
-                     <label for="posts-pages">Posting Untuk</label>
-                     <select id="posts-pages" class="form-control">
-                       <option value="2">News</option>
-                       <option value="3">Lessons</option>
-                     </select>
                    </div>
                  </form>
                </div>

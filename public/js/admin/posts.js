@@ -304,3 +304,26 @@ $(document).on('click', '.btn-remove-post', function() {
             },
   });
 });
+
+function reset_posts_cats(val) {
+  if(val == 3) {
+    $('.sel-cat').fadeIn();
+  }
+  if(val == 2) {
+    $('.sel-cat').fadeOut();
+  }
+  $('#posts-cat').val('');
+  $('#posts-sub-cat').val('');
+  $('#posts-sub-sub-cat').val('');
+  $('#posts-sub-cat').attr('disabled', 'disabled');
+  $('#posts-sub-sub-cat').attr('disabled', 'disabled');
+}
+
+$(document).ready(function() {
+  let val = $('#posts-pages').val();
+  reset_posts_cats(val);
+})
+$(document).on('change', '#posts-pages', function() {
+  let val = $(this).val();
+  reset_posts_cats(val);
+});

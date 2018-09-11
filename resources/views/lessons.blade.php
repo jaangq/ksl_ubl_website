@@ -28,7 +28,7 @@
         <div class="row m-0 pb-5">
         @endif
         <div class="col-md-4">
-          <a href="{{ url('lessons/linux') }}">
+          <a href="{{ url('lessons/'.strtolower(str_slug($cat->name_en, '-'))) }}">
             <div class="lesson-content">
               <div class="image">
                 <i class="ficon {{ $cat->icon }}"></i>

@@ -13,4 +13,8 @@ class Tag_posts extends Model
     public function tags() {
       return $this->belongsTo('\App\AdminModel\Tags', 'id_tags');
     }
+
+    public function posts() {
+      return $this->belongsTo('\App\AdminModel\Posts', 'id_posts');
+    }
 }

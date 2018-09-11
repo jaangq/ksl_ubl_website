@@ -3,6 +3,25 @@
 @import 'part/nav_lessons';
 
 .lesson-list {
+  .content {
+    a {
+      color: #333;
+      text-decoration: none;
+      cursor: default;
+    }
+    a:hover {
+      color: #333;
+    }
+    .less-list-title-post {
+      color: red;
+      text-decoration: none;
+      color: #0056b3;
+      cursor: pointer;
+    }
+    .less-list-title-post:hover {
+      text-decoration: underline;
+    }
+  }
   nav {
     @extend .nav-lessons;
     ul li:hover:not(.chevron), .subcat nav ul li:hover:not(.chevron) {

@@ -5,6 +5,15 @@
     height: 200px;
     width: 100%;
   }
+  .tags {
+      color: #222;
+      // text-shadow: 1px 1px #ddd;
+      font-size: 0.9em;
+      font-weight: 600;
+  }
+  .tags:hover {
+    text-decoration: underline;
+  }
 }
 .nav-posts {
   background-color: #f1f3f5;

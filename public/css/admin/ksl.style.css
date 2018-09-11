@@ -241,6 +241,9 @@ main.col-md-10 .content-head {
   color: #333 !important;
 }
 
+.posts .sel-cat {
+  display: none;
+}
 .posts label {
   font-weight: 800;
 }

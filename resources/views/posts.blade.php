@@ -14,6 +14,7 @@
       <li class="@if(url()->current() == url('posts/lessons-only')) active @endif"><a href="{{ url('posts/lessons-only') }}">{!! $data['pages'][$index++]['content'.session('lang')] !!}</a></li>
       <li class="@if(url()->current() == url('posts/popular')) active @endif"><a href="{{ url('posts/popular') }}">{!! $data['pages'][$index++]['content'.session('lang')] !!}</a></li>
       <li class="@if(url()->current() == url('posts/most-viewed')) active @endif"><a href="{{ url('posts/most-viewed') }}">{!! $data['pages'][$index++]['content'.session('lang')] !!}</a></li>
+      <li class="@if(url()->current() == url('posts/tags')) active @endif"><a href="{{ url('posts/tags') }}">Tags</a></li>
     </ul>
     <div class="search-posts d-inline-block position-absolute">
       <form class="" action="{{ url('posts') }}" method="post">
@@ -25,6 +26,7 @@
   </nav>
   <div class="container mt-5">
     @php($iter = 0)
+    @if(array_key_exists('posts', $data))
     @foreach($data['posts'] as $post)
 
       @if(preg_match('/<img.+src="([^"]+)[^>]+>/', $post->content_en, $matches))
@@ -56,11 +58,20 @@
       @endif
       @php($iter++)
     @endforeach
+
+    @else
+      @foreach($data['tags'] as $tag)
+        <span><a class="btn tags m-3 p-3" href="{{ url('posts/tags/'.$tag->name_en) }}">#{{ $tag->{'name'.session('lang')} }}</a></span>
+      @endforeach
+      <div class="mb-5"><br></div>
+    @endif
   </div>
+  @if(array_key_exists('posts', $data))
   <div class="m-5 p-5 text-center">
     <div class="d-inline-block">{{ $data['posts']->links() }}</div>
   </div>
+  @endif
 
 </section>
-<!-- <script src="{{ asset('js/pages/posts.js') }}" charset="utf-8" defer></script> -->
+<script src="{{ asset('js/pages/posts.js') }}" charset="utf-8" defer></script>
 @endsection

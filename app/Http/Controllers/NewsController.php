@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\AdminModel\Posts;
 use App\AdminModel\Tags;
+use App\AdminModel\Website_text;
 
 class NewsController extends Controller
 {
@@ -37,6 +38,7 @@ class NewsController extends Controller
           $data['prev_post'] = (object) ['categories' => '', 'sub_categories' => '', 'sub_sub_categories' => '', 'pages' => (object) ['name_en' => ''], 'title_slug' => '', 'title_en' => '', 'title' => ''];
         }
 
+        $data['sosmed'] = Website_text::where('prefix', 'sosmed')->get();
         return view('article')->with('data', $data);
     }
 }

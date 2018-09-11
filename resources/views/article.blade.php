@@ -5,8 +5,9 @@
 @endsection
 
 @section('content')
+@if(preg_match('/<img.+src="([^"]+)[^>]+>/', $data['posts']->content_en, $matches)) @endif
 <div class="article">
-  <div class="cover">
+  <div class="cover" style="background-image: url({{ $matches[1] OR '' }})">
     <div class="cover-bg text-center">
       <p class="title h2 p-2">{{ $data['posts']['title'.session('lang')] }}</p>
       <div class="img-container p-2">
@@ -24,11 +25,10 @@
   </nav>
   @endif
   <div class="sosmed-icon">
-    <span><a href="#"><i class="fab fa-facebook"></i></a></span>
-    <span><a href="#"><i class="fab fa-twitter"></i></a></span>
-    <span><a href="#"><i class="fab fa-youtube"></i></a></span>
-    <span><a href="#"><i class="fab fa-instagram"></i></a></span>
-    <span><a href="#"><i class="fab fa-google-plus"></i></a></span>
+    @foreach($data['sosmed'] as $sosmed)
+    @if($sosmed->label_en == 'google+') @php($sosmed->label_en = 'google-plus')  @endif
+    <span><a href="{{ $sosmed->{'content'.session('lang')} }}"><i class="fab fa-{{ $sosmed->label_en }}"></i></a></span>
+    @endforeach
   </div>
   <div class="start-scroll"></div>
   <div class="article pt-4 m-5">
@@ -79,7 +79,7 @@
         <div class="tags text-justify">
           <p class="h3 m-2">Tags</p>
           @foreach($data['tags'] as $tags)
-            <span class="py-1 px-4 m-2"># {{ $tags['name'.session('lang')] }}</span>
+            <span><a class="py-1 px-4 m-2" href="{{ url('posts/tags/'.$tags['name'.session('lang')]) }}"># {{ $tags['name'.session('lang')] }}</a></span>
           @endforeach
         </div>
         <div class="end-scroll"></div>
