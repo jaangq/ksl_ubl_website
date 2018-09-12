@@ -30,4 +30,7 @@ class Posts extends Model
     public function users() {
       return $this->belongsTo('App\AdminModel\Users', 'id_users');
     }
+    public function post_comments() {
+      return $this->hasMany('App\AdminModel\Post_comments', 'id_posts');
+    }
 }

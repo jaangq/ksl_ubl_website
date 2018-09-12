@@ -16,16 +16,17 @@ class CreatePostCommentsTable extends Migration
         Schema::create('post_comments', function (Blueprint $table) {
             $table->increments('id');
             $table->longText('content');
-            $table->integer('likes');
-            $table->integer('views');
-            $table->integer('comments_on_comment')->nullable();
+            $table->integer('likes')->default(0);
+            $table->integer('views')->default(0);
+            $table->string('ip');
+            $table->unsignedInteger('comments_on_comment')->nullable()->comment('id_comments untuk mendapatkan id comment untuk reply comments');
             $table->timestamps();
             $table->unsignedInteger('id_users')->comment('id_users untuk mendapatkan data user mana yang mengomentari');
             $table->unsignedInteger('id_posts')->comment('id_posts untuk mendapatkan data yang mana yang dikomentari');
 
-
-            $table->foreign('id_users')->references('id')->on('users');
-            $table->foreign('id_posts')->references('id')->on('posts');
+            $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_posts')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('comments_on_comment')->references('id')->on('post_comments')->onDelete('cascade');
         });
     }
 

@@ -58,13 +58,31 @@ Route::get('/contact', function () {
   $data['contact'] = App\AdminModel\Pages::where('name_en', 'contact')->get()[0]->website_text_without_sosmed;
   return view('contact')->with('data', $data);
 });
-Route::get('hello', function() {
-    return view('hello');
-});
+Route::get('hello', function(Illuminate\Http\Request $request) {
+  echo 'hello guys';
+  echo '<br>';
+  // echo $request->ip();
+  // echo url()->previous();
+  echo App\AdminModel\Posts::where('title_slug', 'software-freedom-day-ksl-budi-luhur-2017')->first()->id;
+  session()->flush();
+  // dd(session()->all());
+})->middleware('throttle:60,1');
 
+// comment
+Route::post('commenting', 'PostComments@commenting')->name('commenting');
+Route::post('comments/check', 'PostComments@check');
 
+Route::get('login/github', 'Auth\LoginController@redirectToProviderGithub');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallbackGithub');
 
+Route::get('login/google', 'Auth\LoginController@redirectToProviderGoogle');
+Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallbackGoogle');
 
+Route::get('login/instagram', 'Auth\LoginController@redirectToProviderInstagram');
+Route::get('login/instagram/callback', 'Auth\LoginController@handleProviderCallbackInstagram');
+
+// Route::get('login/facebook', 'Auth\LoginController@redirectToProviderFacebook');
+// Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallbackFacebook');
 
 
 
@@ -163,8 +181,5 @@ Route::get('/ksl/admin/{dashboard?}', function(){
 
 // Testing Routes
 Route::get('/test', function() {
-
-  // Example -- Sunday, September 9, 2018, 6:34 AM
-  echo KSLLinking::linking('lessons', 'uyot', 'sad', 'wdad');
-  echo date("Y/m/d", strtotime('2018-09-08 17:19:56') );
+  echo url()->previous();
 });
