@@ -107,6 +107,8 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/fontawesome-all.min.js') }}" defer></script>
     <script src="{{ asset('js/admin/universal.js') }}" defer></script>
+    <script src="{{ asset('js/admin/pages.js') }}" defer></script>
+    <script src="{{ asset('js/admin/posts.js') }}" defer></script>
     @yield('js')
 </body>
 </html>

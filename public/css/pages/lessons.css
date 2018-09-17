@@ -282,7 +282,6 @@ body nav.navbar {
   width: 100%;
   background-color: transparent !important;
   z-index: 1;
-  height: 75px;
   transition-duration: 1s;
 }
 body nav.navbar a {
@@ -600,6 +599,28 @@ body footer {
   font-size: 1.5em;
   padding: 1rem 0;
   font-weight: 500;
+}
+
+@media screen and (max-width: 450px) {
+  .lessons section {
+    padding: 25px 50px;
+  }
+  .lessons section .lessons-cat {
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lessons section .lessons-cat .col-md-4 .lesson-content {
+    margin-bottom: 3rem;
+  }
+  .lessons section .lessons-cat .col-md-4:last-child .lesson-content {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  .lessons section .lessons-cat {
+    font-size: 0.7em;
+  }
 }
 
 /*# sourceMappingURL=lessons.css.map */

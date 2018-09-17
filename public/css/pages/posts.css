@@ -282,7 +282,6 @@ body nav.navbar {
   width: 100%;
   background-color: transparent !important;
   z-index: 1;
-  height: 75px;
   transition-duration: 1s;
 }
 body nav.navbar a {
@@ -582,6 +581,23 @@ body footer {
 .posts-box:hover {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
+}
+
+@media screen and (max-width: 1180px) {
+  .nav-posts .search-posts {
+    position: static !important;
+    padding: 15px 0 15px 45px;
+  }
+  .nav-posts .search-posts input[name=search] {
+    padding-right: 0.75rem;
+    width: 75%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .nav-posts .search-posts {
+    position: static !important;
+    padding: 15px 0 15px 45px;
+  }
 }
 
 /*# sourceMappingURL=posts.css.map */

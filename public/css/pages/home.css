@@ -282,7 +282,6 @@ body nav.navbar {
   width: 100%;
   background-color: transparent !important;
   z-index: 1;
-  height: 75px;
   transition-duration: 1s;
 }
 body nav.navbar a {
@@ -518,7 +517,7 @@ body {
 }
 
 .home .cover {
-  height: 80vh;
+  min-height: 80vh;
   padding: 0;
   background-image: url("http://localhost/ksl_ubl_website/storage/app/public/images/linux_terminal_wallpaper.png");
   background-size: cover;
@@ -537,14 +536,14 @@ body {
 }
 .home .learn-with-us {
   color: #fff;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("http://localhost/ksl_ubl_website/storage/app/public/images/ksl-bg-2.png");
   background-attachment: fixed;
 }
 .home .learn-with-us .learn-container {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 }
 .home .learn-with-us .learn-container .learn-com > p {
   margin: 0;
@@ -597,6 +596,44 @@ body {
 .home .hot-news .news-box:hover {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
+}
+
+@media screen and (max-width: 1679px) {
+  .cover blockquote .mt-5 {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 1144px) {
+  .cover blockquote {
+    font-size: 27px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .home .learn-with-us .learn-container > p:first-child {
+    display: none;
+  }
+  .home .learn-with-us .learn-container .be-our-family > p:first-child {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .cover blockquote {
+    font-size: 24px;
+  }
+
+  .home .learn-with-us .learn-container .learn-com .f-lessons {
+    font-size: 4.5vw;
+  }
+}
+@media screen and (max-width: 300px) {
+  .cover blockquote {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 991px) {
+  body #navbarSupportedContent {
+    background-color: #000;
+  }
 }
 
 /*# sourceMappingURL=home.css.map */

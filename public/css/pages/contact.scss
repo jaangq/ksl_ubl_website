@@ -81,3 +81,33 @@
     }
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .col-md-6.right, .col-md-6.left {
+    > p:first-child {
+      text-align: center !important;
+    }
+  }
+  .right {
+    margin-top: 50px;
+  }
+}
+
+
+@media only screen and (max-width: 471px) {
+  .contact {
+    section {
+      margin: 5px !important;
+      padding: 5px;
+    }
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact {
+    section {
+      > div {
+        padding: 5px !important;
+      }
+    }
+  }
+}

@@ -282,7 +282,6 @@ body nav.navbar {
   width: 100%;
   background-color: transparent !important;
   z-index: 1;
-  height: 75px;
   transition-duration: 1s;
 }
 body nav.navbar a {
@@ -711,6 +710,22 @@ body footer {
 .article .article .comment-box .comment-user .comment-foot::after {
   content: ".";
   color: transparent;
+}
+
+@media screen and (max-width: 800px) {
+  .article .sosmed-icon {
+    padding-left: 20px;
+  }
+  .article .article {
+    padding-left: 50px;
+  }
+  .article .article .col-md-3 {
+    max-width: 2%;
+  }
+  .article .article .col-md-6 {
+    max-width: 90%;
+    flex: 90%;
+  }
 }
 
 /*# sourceMappingURL=article.css.map */

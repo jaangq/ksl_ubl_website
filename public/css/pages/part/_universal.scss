@@ -316,7 +316,7 @@ body {
     width: 100%;
     background-color: transparent !important;
     z-index: 1;
-    height: 75px;
+    // height: 75px;
     transition-duration: 1s;
     a:not(.nav-title) {
       @extend .a-link-anim-bottom-border;
@@ -371,7 +371,7 @@ body {
               padding: 5px 20px;
               color: #fff;
               strong {
-                padding-left: 10px; 
+                padding-left: 10px;
               }
             }
             li.lang-choice:first-child {

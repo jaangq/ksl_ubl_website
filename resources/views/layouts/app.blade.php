@@ -36,6 +36,7 @@
       </div>
     </div>
     <div id="app">
+      @if(Request::segment(3) !== 'login' && Request::segment(3) !== 'register')
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand nav-title" href="/"><img class="ksl-logo" src="{{ asset('storage/images/logo_KSL-UBL.png') }}" alt="KSL-UBL"> Kelompok Study Linux - UBL </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,6 +89,9 @@
           </ul>
         </div>
         </nav>
+        @else
+        <div class="my-5 py-3"></div>
+        @endif
         <main class="p-0">
             @yield('content')
         </main>

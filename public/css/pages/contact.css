@@ -282,7 +282,6 @@ body nav.navbar {
   width: 100%;
   background-color: transparent !important;
   z-index: 1;
-  height: 75px;
   transition-duration: 1s;
 }
 body nav.navbar a {
@@ -593,6 +592,27 @@ body footer {
 }
 .contact section .right .map-cont #menu label {
   margin-right: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+  .col-md-6.right > p:first-child, .col-md-6.left > p:first-child {
+    text-align: center !important;
+  }
+
+  .right {
+    margin-top: 50px;
+  }
+}
+@media only screen and (max-width: 471px) {
+  .contact section {
+    margin: 5px !important;
+    padding: 5px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contact section > div {
+    padding: 5px !important;
+  }
 }
 
 /*# sourceMappingURL=contact.css.map */

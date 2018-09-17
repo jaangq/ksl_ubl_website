@@ -167,6 +167,8 @@
          <!-- End of Modal -->
  </section>
  <meta name="page" content="posts">
- <script src="{{ asset('js/ckeditor/ckeditor.js') }}" defer></script>
- <script src="{{ asset('js/admin/posts.js') }}" defer></script>
+ <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+ @section('js')
+
+ @endsection
 @endsection

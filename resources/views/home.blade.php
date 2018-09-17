@@ -32,6 +32,7 @@
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-5 be-our-family">
+          <p class="text-center h3 my-4 d-none">{!! $data['home'][3]['content'.session('lang')] !!}</p>
           {!! $data['home'][$index++]['content'.session('lang')] !!}
         </div>
       </div>

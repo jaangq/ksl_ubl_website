@@ -64,3 +64,40 @@
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  .lessons {
+    section {
+      padding: 25px 50px;
+      .lessons-cat {
+        font-size: 0.7em;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .lessons section .lessons-cat {
+    .col-md-4 {
+      .lesson-content {
+        margin-bottom: 3rem;
+      }
+    }
+    .col-md-4:last-child {
+      .lesson-content {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  .lessons {
+    section {
+      .lessons-cat {
+        font-size: 0.7em;
+      }
+    }
+  }
+}

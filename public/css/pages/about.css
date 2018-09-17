@@ -282,7 +282,6 @@ body nav.navbar {
   width: 100%;
   background-color: transparent !important;
   z-index: 1;
-  height: 75px;
   transition-duration: 1s;
 }
 body nav.navbar a {
@@ -524,6 +523,13 @@ body #app nav.navbar {
 body footer {
   color: #fff;
   background-color: #000;
+}
+
+@media only screen and (max-width: 800px) {
+  .p-5 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
 }
 
 /*# sourceMappingURL=about.css.map */

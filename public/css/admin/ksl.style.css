@@ -160,6 +160,48 @@ main.col-md-10 .content-head {
   color: #000;
 }
 
+@media screen and (max-width: 938px) {
+  section.col-md-2 {
+    flex: 0 0 15%;
+    max-width: 15%;
+  }
+
+  main.col-md-10 {
+    flex: 0 0 85%;
+    min-width: 85%;
+  }
+  main.col-md-10 .container {
+    max-width: unset;
+  }
+}
+@media screen and (max-width: 800px) {
+  section.col-md-2 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  main.col-md-10 {
+    flex: 0 0 75%;
+    min-width: 75%;
+  }
+  main.col-md-10 .container {
+    max-width: unset;
+  }
+
+  section.sidebar ul li ul li {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 470px) {
+  section {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 330px) {
+  section {
+    font-size: 0.6em;
+  }
+}
 .nthnyali {
   border: 1px solid #ddd;
   border-bottom-color: #fff !important;
