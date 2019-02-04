@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 08, 2018 at 09:02 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Feb 04, 2019 at 04:57 AM
+-- Server version: 10.3.12-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -51,7 +51,7 @@ INSERT INTO `tag_posts` (`id`, `id_posts`, `id_tags`, `created_at`, `updated_at`
 (9, 7, 4, '2018-09-08 11:16:17', '2018-09-08 11:16:17'),
 (10, 8, 4, '2018-09-08 11:41:01', '2018-09-08 11:41:01'),
 (11, 9, 4, '2018-09-08 11:50:41', '2018-09-08 11:50:41'),
-(12, 9, 9, '2018-09-08 11:50:42', '2018-09-08 11:50:42'),
+(12, 9, 8, '2018-09-08 11:50:42', '2018-09-08 11:50:42'),
 (13, 10, 4, '2018-09-08 11:57:16', '2018-09-08 11:57:16');
 
 --
@@ -75,17 +75,6 @@ ALTER TABLE `tag_posts`
 --
 ALTER TABLE `tag_posts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `tag_posts`
---
-ALTER TABLE `tag_posts`
-  ADD CONSTRAINT `tag_posts_id_posts_foreign` FOREIGN KEY (`id_posts`) REFERENCES `posts` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `tag_posts_id_tags_foreign` FOREIGN KEY (`id_tags`) REFERENCES `tags` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

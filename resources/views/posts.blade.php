@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-
 <section class="contaier posts pt-4">
   <nav class="nav-posts pt-2 position-relative">
     <ul class="d-inline-block">

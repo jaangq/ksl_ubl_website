@@ -128,6 +128,7 @@ class PostsController extends Controller
             case '1': $post->id_post_status = 2; break;
             case '2': $post->id_post_status = 1; break;
           }
+          $post->title_slug = str_slug($post->title_en);
           $post->save();
           $text = 'Status post has been changed';
           $type = 'success';
